@@ -187,7 +187,7 @@ document.body.appendChild(portfolio);
 // ===== BLOG =====
 const blogData = [{
         img: "img/UI : UX.png",
-        link: "index.html"
+        link: "UI-UX.html"
     },
     {
         img: "img/Development.png",

@@ -23,11 +23,12 @@ logoLink.appendChild(logoImg);
 // Nav List
 const navList = document.createElement("ul");
 navList.className = "nav-list";
-const links = ["Home", "About", "Services", "Portfolio", "Contact"];
+const links = ["Home", "Leadership", "Team"];
 links.forEach(text => {
+    const id = text.toLowerCase().replace(/\s+/g, '-'); // normalisasi id
     const li = document.createElement("li");
     const a = document.createElement("a");
-    a.href = `#${text.toLowerCase()}`;
+    a.href = `#${id}`;
     a.textContent = text;
     li.appendChild(a);
     navList.appendChild(li);
@@ -42,7 +43,8 @@ for (let i = 0; i < 3; i++) {
 }
 
 // Toggle menu
-hamburger.addEventListener("click", () => {
+hamburger.addEventListener("click", (e) => {
+    e.stopPropagation();
     navList.classList.toggle("active");
     hamburger.classList.toggle("active");
 });
@@ -60,9 +62,10 @@ navbar.appendChild(navList);
 navbar.appendChild(hamburger);
 document.body.appendChild(navbar);
 
-// ===== HEADER =====
+// ===== HEADER (Home) =====
 const header = document.createElement("header");
 header.className = "header";
+header.id = "home"; // <-- ID untuk Home
 
 const headerContent = document.createElement("div");
 headerContent.className = "header-content";
@@ -74,9 +77,10 @@ headerContent.appendChild(h1);
 header.appendChild(headerContent);
 document.body.appendChild(header);
 
-// ===== LEADERSHIP SECTION =====
+// ===== LEADERSHIP SECTION (About) =====
 const leadership = document.createElement("section");
 leadership.className = "leadership";
+leadership.id = "leadership"; // <-- ID untuk About
 
 const leaderTitle = document.createElement("h2");
 leaderTitle.textContent = "meet our leadership team";
@@ -132,9 +136,10 @@ leaders.forEach(leader => {
 leadership.appendChild(leaderGrid);
 document.body.appendChild(leadership);
 
-// ===== TEAM SECTION =====
+// ===== TEAM SECTION (Services) =====
 const teamSection = document.createElement("section");
 teamSection.className = "team-section";
+teamSection.id = "team"; // <-- ID untuk Services
 
 const teamTitle = document.createElement("h2");
 teamTitle.textContent = "Our Team";
@@ -173,6 +178,8 @@ teamMembers.forEach(member => {
     if (member.link) {
         const a = document.createElement("a");
         a.href = member.link;
+        a.target = "_blank"; // buka di tab baru untuk link eksternal
+        a.rel = "noopener noreferrer";
         const img = document.createElement("img");
         img.src = member.img;
         img.alt = member.name;
@@ -189,7 +196,7 @@ teamMembers.forEach(member => {
     name.textContent = member.name;
 
     const role = document.createElement("p");
-    role.className = "position " + member.role.toLowerCase().replace(" ", "");
+    role.className = "position " + member.role.toLowerCase().replace(/\s+/g, "");
     role.textContent = member.role;
 
     card.appendChild(name);
@@ -209,14 +216,28 @@ document.body.appendChild(footer);
 // ===== SMOOTH SCROLL =====
 document.querySelectorAll(".nav-list a").forEach(link => {
     link.addEventListener("click", e => {
+        // jika link eksternal (contoh: http...) biarkan normal
+        const href = link.getAttribute("href");
+        if (!href || href.startsWith("http")) return;
+
         e.preventDefault();
-        const targetId = link.getAttribute("href").substring(1);
+        const targetId = href.substring(1);
         const target = document.getElementById(targetId);
         if (target) {
+            // hitung offset kalau ada navbar fixed (sesuaikan -120 jika perlu)
+            const offset = 120;
+            const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
             window.scrollTo({
-                top: target.offsetTop - 120,
+                top: top,
                 behavior: "smooth"
             });
+
+            // update URL hash tanpa memicu jump
+            // beri sedikit delay agar smooth scroll mulai dulu
+            setTimeout(() => {
+                history.pushState(null, "", `#${targetId}`);
+            }, 300);
+
             // tutup menu setelah klik di mobile
             navList.classList.remove("active");
             hamburger.classList.remove("active");

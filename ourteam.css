@@ -12,19 +12,80 @@ body {
   overflow-x: hidden;
 }
 
+/* ===== Top Bar ===== */
+.topbar {
+  background: #56a3ef;
+  color: #fff;
+  padding: 8px 0;
+  font-size: 0.9rem;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1001;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* logo kiri, nav kanan */
+  align-items: center;
+  padding: 15px 80px;
+  position: fixed;
+  top: 30px; /* di bawah topbar */
+  left: 0;
+  background: #fff;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.logo-navbar {
+  height: 60px;
+}
+
+/* Nav Links */
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-list li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-list li a:hover {
+  color: #56a3ef;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none; /* hidden desktop */
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #000;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
 /* ===== Header ===== */
 .header {
   width: 100%;
   text-align: center;
   background: linear-gradient(to bottom, #eaf4ff, #ffffff);
   position: relative;
-}
-
-.topbar {
-  background: #56a3ef;
-  color: #fff;
-  padding: 8px 0;
-  font-size: 0.9rem;
+  padding-top: 115px; /* topbar + navbar + spacing */
 }
 
 .header-content {
@@ -33,13 +94,6 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-}
-
-.logo {
-  position: absolute;
-  left: 20px;
-  top: 60px;
-  height: 60px;
 }
 
 .header-content h1 {
@@ -61,7 +115,6 @@ body {
   font-size: 1.5rem;
 }
 
-/* Gunakan flex agar baris terakhir tetap rata tengah */
 .leader-grid {
   display: flex;
   flex-wrap: wrap;
@@ -134,7 +187,6 @@ body {
   font-size: 2rem;
 }
 
-/* Gunakan flex juga untuk tim */
 .team-grid {
   display: flex;
   flex-wrap: wrap;
@@ -168,42 +220,36 @@ body {
   color: #ff8800;
 }
 
-/* ===== Footer Background ===== */
+/* ===== Footer ===== */
 .footer {
-  width: 100%;
-  position: relative;
+  text-align: center;
+  padding: 20px;
+  background: #222;
+  color: white;
+  font-size: 0.9rem;
 }
 
-.footer-bg {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* ===== Responsive Design ===== */
+/* ===== Responsive ===== */
 
 /* Tablet */
 @media (max-width: 992px) {
+  .navbar {
+    padding: 15px 40px;
+  }
+  .logo-navbar {
+    height: 50px;
+  }
   .header-content {
     padding: 150px 0 150px;
   }
-
   .header-content h1 {
     font-size: 1.8rem;
   }
-
-  .logo {
-    height: 50px;
-    top: 40px;
-    left: 15px;
-  }
-
   .leader-card img,
   .team-card img {
     width: 90px;
     height: 90px;
   }
-
   .leader-grid,
   .team-grid {
     gap: 30px;
@@ -212,26 +258,42 @@ body {
 
 /* Mobile */
 @media (max-width: 600px) {
-  .topbar {
-    font-size: 0.8rem;
-    padding: 6px 0;
-    text-align: center;
+  .navbar {
+    padding: 20px 20px;
+    justify-content: space-between;
   }
 
+  .nav-list {
+    position: fixed;
+    top: 60px;
+    right: -100%;
+    flex-direction: column;
+    gap: 15px;
+    background: #fff;
+    width: 200px;
+    height: calc(100% - 60px);
+    padding: 20px;
+    transition: right 0.3s ease;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+  }
+
+  .nav-list.active {
+    right: 0;
+  }
+  .hamburger {
+    display: flex;
+    order: 2;
+  }
+
+  /* Naikkan header di mobile */
   .header-content {
-    padding: 100px 0;
+    padding: 120px 0 120px;
   }
-
   .header-content h1 {
     font-size: 1.4rem;
     line-height: 1.4;
     padding: 0 1rem;
-  }
-
-  .logo {
-    height: 45px;
-    top: 25px;
-    left: 10px;
   }
 
   .leader-card img,
@@ -239,32 +301,23 @@ body {
     width: 80px;
     height: 80px;
   }
-
   .leader-card h3,
   .team-card h3 {
     font-size: 0.95rem;
   }
-
   .role,
   .position {
     font-size: 0.8rem;
   }
-
   .leader-grid,
   .team-grid {
     gap: 25px;
   }
-
   .team-section {
     padding-bottom: 60px;
   }
-}
-
-/* ===== FOOTER ===== */
-footer {
-  text-align: center;
-  padding-bottom: 20px;
-  background: #222;
-  color: white;
-  font-size: 0.9rem;
+  .topbar {
+    font-size: 0.8rem;
+    padding: 6px 0;
+  }
 }

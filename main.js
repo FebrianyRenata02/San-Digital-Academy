@@ -140,7 +140,7 @@ const portfolioData = [{
     {
         img: "/img/online-resume-animate.svg",
         link: "https://febrianyrenata.vercel.app/",
-        title: "Portfolio Rena Versi Update"
+        title: "Portfolio Rena Update"
     },
     {
         img: "https://specialteam.vercel.app/assets/img/main_icon2.svg",

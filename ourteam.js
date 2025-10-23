@@ -1,98 +1,225 @@
-// ====== Buat Struktur Halaman Our Team ======
-document.body.innerHTML = `
-  <!-- HEADER -->
-  <header class="header">
-    <div class="topbar">
-      kami adalah Perusahaan San Digital profesional, mari bekerja sama hubungi kami
-    </div>
-    <div class="header-content">
-      <a href="index.html">
-        <img src="/img/Agency Logo Transparant.png" alt="San Agency Logo" class="logo">
-      </a>
-      <h1>Our Team</h1>
-    </div>
-  </header>
+// ===== RESET BODY =====
+document.body.innerHTML = "";
 
-  <!-- LEADERSHIP SECTION -->
-  <section class="leadership">
-    <h2>meet our leadership team</h2>
-    <div class="leader-grid">
-      <div class="leader-card border-blue">
-        <img src="/img/renata.jpg" alt="Renata">
-        <h3>Renata</h3>
-        <p class="role founder">Founder</p>
-      </div>
-      <div class="leader-card border-orange">
-        <img src="https://asset.kompas.com/crops/y2HoRqjm3RxFKqLHxOOeKAqhoxg=/0x0:1000x667/750x500/data/photo/2020/01/07/5e143342aed9a.jpg" alt="Lorem">
-        <h3>Lorem</h3>
-        <p class="role chief">Chief</p>
-      </div>
-      <div class="leader-card border-pink">
-        <img src="https://services.presensi.co.id/media/admin/blog/a-728127.png" alt="Lorem">
-        <h3>Lorem</h3>
-        <p class="role admin">Admin</p>
-      </div>
-      <div class="leader-card border-green">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNrqZSc5NZcrzDeA347mSvluoIJsBxGJrtqA&s" alt="Lorem">
-        <h3>Lorem</h3>
-        <p class="role moderator">Moderator</p>
-      </div>
-    </div>
-  </section>
+// ===== TOP BAR =====
+const topBar = document.createElement("div");
+topBar.className = "topbar";
+topBar.textContent = "kami adalah Perusahaan San Digital profesional, mari bekerja sama hubungi kami";
+document.body.appendChild(topBar);
 
-  <!-- TEAM SECTION -->
-  <section class="team-section">
-    <h2>Our Team</h2>
-    <div class="team-grid">
-      <div class="team-card border-yellow">
-            <a href="https://www.figma.com/design/alJvfHARz1XBSuUo7KTzpF/San-Digital-Agency?t=IAApafBVeJqBrHzm-0">
-      <img src="/img/Renata2.jpg" alt="Renata">
-      </a>
-        <h3>Renata</h3>
-     
-       <p class="position design">Desain</p>
-     
-      </div>
-      <div class="team-card border-yellow">
-        <img src="https://blog.digitalskola.com/wp-content/uploads/2025/01/front-end-developer-2-1024x683.jpg" alt="Lorem">
-        <h3>Lorem</h3>
-        <p class="position frontend">Front-End</p>
-      </div>
-      <div class="team-card border-yellow">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsu_dr5bwQXSBqr3WGZ0eTNqDv51c-jnhh0w&s" alt="Lorem">
-        <h3>Lorem</h3>
-        <p class="position backend">Back-End</p>
-      </div>
-      <div class="team-card border-yellow">
-        <img src="https://dibimbing-cdn.sgp1.cdn.digitaloceanspaces.com/1749632298765-gaji-full-stack-web-developer.webp" alt="Lorem">
-        <h3>Lorem</h3>
-        <p class="position fullstack">Full-Stack</p>
-      </div>
-    </div>
-  </section>
+// ===== NAVBAR =====
+const navbar = document.createElement("nav");
+navbar.className = "navbar";
 
-  <!-- FOOTER BACKGROUND -->
-  <footer class="footer">
-    <img src="/img/Header.png" alt="Footer Background" class="footer-bg">
-  </footer>
-`;
+// Logo
+const logoLink = document.createElement("a");
+logoLink.href = "index.html";
+const logoImg = document.createElement("img");
+logoImg.src = "/img/Agency Logo Transparant.png";
+logoImg.alt = "San Agency Logo";
+logoImg.className = "logo-navbar";
+logoLink.appendChild(logoImg);
+
+// Nav List
+const navList = document.createElement("ul");
+navList.className = "nav-list";
+const links = ["Home", "About", "Services", "Portfolio", "Contact"];
+links.forEach(text => {
+    const li = document.createElement("li");
+    const a = document.createElement("a");
+    a.href = `#${text.toLowerCase()}`;
+    a.textContent = text;
+    li.appendChild(a);
+    navList.appendChild(li);
+});
+
+// Hamburger Menu
+const hamburger = document.createElement("div");
+hamburger.className = "hamburger";
+for (let i = 0; i < 3; i++) {
+    const span = document.createElement("span");
+    hamburger.appendChild(span);
+}
+
+// Toggle menu
+hamburger.addEventListener("click", () => {
+    navList.classList.toggle("active");
+    hamburger.classList.toggle("active");
+});
+
+// Tutup sidebar ketika klik di luar
+document.addEventListener("click", (e) => {
+    if (!navList.contains(e.target) && !hamburger.contains(e.target)) {
+        navList.classList.remove("active");
+        hamburger.classList.remove("active");
+    }
+});
+
+navbar.appendChild(logoLink);
+navbar.appendChild(navList);
+navbar.appendChild(hamburger);
+document.body.appendChild(navbar);
+
+// ===== HEADER =====
+const header = document.createElement("header");
+header.className = "header";
+
+const headerContent = document.createElement("div");
+headerContent.className = "header-content";
+
+const h1 = document.createElement("h1");
+h1.textContent = "Our Team";
+
+headerContent.appendChild(h1);
+header.appendChild(headerContent);
+document.body.appendChild(header);
+
+// ===== LEADERSHIP SECTION =====
+const leadership = document.createElement("section");
+leadership.className = "leadership";
+
+const leaderTitle = document.createElement("h2");
+leaderTitle.textContent = "meet our leadership team";
+leadership.appendChild(leaderTitle);
+
+const leaderGrid = document.createElement("div");
+leaderGrid.className = "leader-grid";
+
+const leaders = [{
+        name: "Renata",
+        role: "Founder",
+        img: "/img/renata.jpg",
+        color: "border-blue founder"
+    },
+    {
+        name: "Lorem",
+        role: "Chief",
+        img: "https://asset.kompas.com/crops/y2HoRqjm3RxFKqLHxOOeKAqhoxg=/0x0:1000x667/750x500/data/photo/2020/01/07/5e143342aed9a.jpg",
+        color: "border-orange chief"
+    },
+    {
+        name: "Lorem",
+        role: "Admin",
+        img: "https://services.presensi.co.id/media/admin/blog/a-728127.png",
+        color: "border-pink admin"
+    },
+    {
+        name: "Lorem",
+        role: "Moderator",
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNrqZSc5NZcrzDeA347mSvluoIJsBxGJrtqA&s",
+        color: "border-green moderator"
+    }
+];
+
+leaders.forEach(leader => {
+    const card = document.createElement("div");
+    card.className = `leader-card ${leader.color}`;
+    const img = document.createElement("img");
+    img.src = leader.img;
+    img.alt = leader.name;
+    const name = document.createElement("h3");
+    name.textContent = leader.name;
+    const role = document.createElement("p");
+    role.className = "role " + leader.role.toLowerCase();
+    role.textContent = leader.role;
+
+    card.appendChild(img);
+    card.appendChild(name);
+    card.appendChild(role);
+    leaderGrid.appendChild(card);
+});
+
+leadership.appendChild(leaderGrid);
+document.body.appendChild(leadership);
+
+// ===== TEAM SECTION =====
+const teamSection = document.createElement("section");
+teamSection.className = "team-section";
+
+const teamTitle = document.createElement("h2");
+teamTitle.textContent = "Our Team";
+teamSection.appendChild(teamTitle);
+
+const teamGrid = document.createElement("div");
+teamGrid.className = "team-grid";
+
+const teamMembers = [{
+        name: "Renata",
+        role: "Desain",
+        img: "/img/Renata2.jpg",
+        link: "https://www.figma.com/design/alJvfHARz1XBSuUo7KTzpF/San-Digital-Agency?t=IAApafBVeJqBrHzm-0"
+    },
+    {
+        name: "Lorem",
+        role: "Front-End",
+        img: "https://blog.digitalskola.com/wp-content/uploads/2025/01/front-end-developer-2-1024x683.jpg"
+    },
+    {
+        name: "Lorem",
+        role: "Back-End",
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsu_dr5bwQXSBqr3WGZ0eTNqDv51c-jnhh0w&s"
+    },
+    {
+        name: "Lorem",
+        role: "Full-Stack",
+        img: "https://dibimbing-cdn.sgp1.cdn.digitaloceanspaces.com/1749632298765-gaji-full-stack-web-developer.webp"
+    }
+];
+
+teamMembers.forEach(member => {
+    const card = document.createElement("div");
+    card.className = "team-card border-yellow";
+
+    if (member.link) {
+        const a = document.createElement("a");
+        a.href = member.link;
+        const img = document.createElement("img");
+        img.src = member.img;
+        img.alt = member.name;
+        a.appendChild(img);
+        card.appendChild(a);
+    } else {
+        const img = document.createElement("img");
+        img.src = member.img;
+        img.alt = member.name;
+        card.appendChild(img);
+    }
+
+    const name = document.createElement("h3");
+    name.textContent = member.name;
+
+    const role = document.createElement("p");
+    role.className = "position " + member.role.toLowerCase().replace(" ", "");
+    role.textContent = member.role;
+
+    card.appendChild(name);
+    card.appendChild(role);
+    teamGrid.appendChild(card);
+});
+
+teamSection.appendChild(teamGrid);
+document.body.appendChild(teamSection);
+
 // ===== FOOTER =====
 const footer = document.createElement("footer");
+footer.className = "footer";
 footer.innerHTML = `<p>© 2025 San Digital Agency. All Rights Reserved.</p>`;
 document.body.appendChild(footer);
 
-
 // ===== SMOOTH SCROLL =====
-document.querySelectorAll(".nav-list a").forEach((link) => {
-    link.addEventListener("click", (e) => {
+document.querySelectorAll(".nav-list a").forEach(link => {
+    link.addEventListener("click", e => {
         e.preventDefault();
         const targetId = link.getAttribute("href").substring(1);
         const target = document.getElementById(targetId);
         if (target) {
             window.scrollTo({
                 top: target.offsetTop - 120,
-                behavior: "smooth",
+                behavior: "smooth"
             });
+            // tutup menu setelah klik di mobile
+            navList.classList.remove("active");
+            hamburger.classList.remove("active");
         }
     });
 });

@@ -6,13 +6,6 @@ navbar.innerHTML = `
     <a href="index.html" class="logo-link">
       <img src="/img/Agency Logo Transparant.png" alt="San Digital Logo" class="navbar-logo">
     </a>
-    <ul class="nav-list">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="ourteam.html">About</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="portfolio.html">Portfolio</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
     <div class="hamburger">
       <span></span>
       <span></span>

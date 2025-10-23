@@ -83,7 +83,7 @@ leadership.className = "leadership";
 leadership.id = "leadership"; // <-- ID untuk About
 
 const leaderTitle = document.createElement("h2");
-leaderTitle.textContent = "meet our leadership team";
+leaderTitle.textContent = "Meet Our Leadership Team";
 leadership.appendChild(leaderTitle);
 
 const leaderGrid = document.createElement("div");

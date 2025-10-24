@@ -205,7 +205,7 @@ const blogData = [{
     },
     {
         img: "img/Engineer.png",
-        link: "index.html"
+        link: "engineer.html"
     },
 ];
 

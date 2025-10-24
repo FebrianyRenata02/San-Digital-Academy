@@ -140,7 +140,7 @@ const portfolioData = [{
     {
         img: "/img/online-resume-animate.svg",
         link: "https://febrianyrenata.vercel.app/",
-        title: "Portfolio Rena Update"
+        title: "Portfolio Rena Versi Update"
     },
     {
         img: "https://specialteam.vercel.app/assets/img/main_icon2.svg",
@@ -205,7 +205,7 @@ const blogData = [{
     },
     {
         img: "img/Engineer.png",
-        link: "Engineer.html"
+        link: "engineer.html"
     },
 ];
 
@@ -296,8 +296,14 @@ document.querySelector(".about .cta-btn").addEventListener("click", () => {
     }
 });
 
-// ====== HAMBURGER MENU FUNCTIONAL ======
-hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("active");
-    navList.classList.toggle("active");
-});
+// Tambahkan ikon sosial media ke hero section
+const heroText = document.querySelector(".hero-text");
+const socialIcons = document.createElement("div");
+socialIcons.className = "social-icons";
+socialIcons.innerHTML = `
+  <a href="https://github.com/SansDev-Comunity" target="_blank"><i class="fa-brands fa-github"></i></a>
+  <a href="https://www.instagram.com/sunsetbrew56/" target="_blank"><i class="fab fa-instagram"></i></a>
+  <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://discord.gg/VHscdktb24" target="_blank"><i class="fa-brands fa-discord"></i></a>
+`;
+heroText.appendChild(socialIcons);

@@ -207,6 +207,7 @@ teamMembers.forEach(member => {
 teamSection.appendChild(teamGrid);
 document.body.appendChild(teamSection);
 
+
 // ===== PRE-FOOTER =====
 const preFooter = document.createElement("section");
 preFooter.className = "pre-footer";
@@ -220,7 +221,7 @@ preFooter.innerHTML = `
       <h3>Profil Kami</h3>
       <ul>
         <li>Tentang Perusahaan</li>
-        <li>Kontak</li>
+        <li>Komunitas</li>
       </ul>
     </div>
 
@@ -228,9 +229,11 @@ preFooter.innerHTML = `
       <h3>Layanan Kami</h3>
       <ul>
         <li>UI/UX Design</li>
+        <li>Desain Grafis</li>
+        <li>Web Designer</li>
         <li>Web Development</li>
         <li>Digital Marketing</li>
-        <li>IT Consulting</li>
+        <li>Partnership</li>
       </ul>
     </div>
 
@@ -238,8 +241,10 @@ preFooter.innerHTML = `
       <h3>Insight</h3>
       <ul>
         <li>Blog</li>
+        <li>E-book</li>
         <li>Karir</li>
-        <li>Studi Kasus</li>
+        <li>Portofolio Web Development</li>
+        <li>Portofolio Digital Marketing</li>
       </ul>
     </div>
   </div>

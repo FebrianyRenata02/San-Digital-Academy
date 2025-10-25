@@ -43,7 +43,7 @@ nav.className = "navbar";
 const logo = document.createElement("img");
 logo.src = "img/Agency Logo Transparant.png";
 logo.alt = "San Digital Agency";
-logo.className = "logo";
+logo.className = "logo scroll-top"; // ← tambahkan class scroll-top agar bisa klik scroll ke atas
 
 // daftar menu
 const navList = document.createElement("ul");
@@ -135,17 +135,17 @@ document.body.appendChild(services);
 const portfolioData = [{
         img: "img/programmer.svg",
         link: "https://febrianyrenata02.github.io/web-portofolio-saya/portofolio",
-        title: "Portfolio Rena"
+        title: "Portfolio Rena",
     },
     {
         img: "/img/online-resume-animate.svg",
         link: "https://febrianyrenata.vercel.app/",
-        title: "Portfolio Rena Versi Update"
+        title: "Portfolio Rena Versi Update",
     },
     {
         img: "https://specialteam.vercel.app/assets/img/main_icon2.svg",
         link: "https://specialteam.vercel.app/",
-        title: "Special Team"
+        title: "Special Team",
     },
 ];
 
@@ -271,7 +271,7 @@ preFooter.className = "pre-footer";
 preFooter.innerHTML = `
   <div class="pre-footer-container">
     <div class="footer-column">
-      <img src="img/Agency Logo Transparant.png" alt="San Logo" class="footer-logo" />
+      <img src="img/Agency Logo Transparant.png" alt="San Logo" class="footer-logo scroll-top" />
     </div>
 
     <div class="footer-column">
@@ -304,13 +304,12 @@ preFooter.innerHTML = `
 `;
 document.body.appendChild(preFooter);
 
-
 // ===== FOOTER =====
 const footer = document.createElement("footer");
 footer.innerHTML = `<p>© 2025 San Digital Agency. All Rights Reserved.</p>`;
 document.body.appendChild(footer);
 
-// ===== SMOOTH SCROLL =====
+// ===== SMOOTH SCROLL MENU =====
 document.querySelectorAll(".nav-list a").forEach((link) => {
     link.addEventListener("click", (e) => {
         e.preventDefault();
@@ -336,7 +335,17 @@ document.querySelector(".about .cta-btn").addEventListener("click", () => {
     }
 });
 
-// Tambahkan ikon sosial media ke hero section
+// ===== LOGO KLIK SCROLL KE ATAS =====
+document.querySelectorAll(".scroll-top").forEach((el) => {
+    el.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    });
+});
+
+// ===== SOSIAL MEDIA =====
 const heroText = document.querySelector(".hero-text");
 const socialIcons = document.createElement("div");
 socialIcons.className = "social-icons";
@@ -344,6 +353,6 @@ socialIcons.innerHTML = `
   <a href="https://github.com/SansDev-Comunity" target="_blank"><i class="fa-brands fa-github"></i></a>
   <a href="https://www.instagram.com/sunsetbrew56/" target="_blank"><i class="fab fa-instagram"></i></a>
   <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
-    <a href="https://discord.gg/VHscdktb24" target="_blank"><i class="fa-brands fa-discord"></i></a>
+  <a href="https://discord.gg/VHscdktb24" target="_blank"><i class="fa-brands fa-discord"></i></a>
 `;
 heroText.appendChild(socialIcons);

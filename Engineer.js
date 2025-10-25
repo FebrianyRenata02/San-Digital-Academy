@@ -116,3 +116,17 @@ document.querySelectorAll(".nav-list a").forEach((link) => {
         }
     });
 });
+
+// ===== SCROLL KE ATAS SAAT LOGO PRE-FOOTER DIKLIK =====
+const preFooterLogo = document.querySelector(".footer-logo"); // ganti sesuai class logomu
+
+if (preFooterLogo) {
+    preFooterLogo.addEventListener("click", (e) => {
+        e.preventDefault(); // cegah link reload kalau pakai <a>
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+        history.pushState(null, "", "#home"); // ubah URL hash ke #home
+    });
+}

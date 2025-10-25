@@ -246,24 +246,46 @@ blogData.forEach((item) => {
 blog.appendChild(blogGrid);
 document.body.appendChild(blog);
 
-// ===== CONTACT =====
+// ===== CONTACT SECTION =====
 const contact = document.createElement("section");
 contact.className = "contact";
 contact.id = "contact";
+
 contact.innerHTML = `
-  <h2>Contact</h2>
-  <div class="contact-container">
-    <iframe src="https://maps.google.com/maps?q=Bandung&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
-    <form>
-      <input type="text" placeholder="Name" required />
-      <input type="email" placeholder="Email" required />
-      <input type="text" placeholder="Phone Number" required />
-      <textarea placeholder="Your Message"></textarea>
-      <button type="submit">Submit</button>
-    </form>
+  <div class="contact-wrapper">
+    <h2>Contact</h2>
+    <div class="contact-container">
+      <div class="contact-map">
+        <iframe 
+          src="https://maps.google.com/maps?q=Bandung&t=&z=13&ie=UTF8&iwloc=&output=embed"
+          loading="lazy"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <div class="contact-info">
+        <p>
+          Hubungi kami untuk konsultasi maupun jika kamu punya pertanyaan.
+          Kamu dapat mengisi form yang sudah disediakan atau melalui kontak yang ada.
+        </p>
+        <form>
+          <div class="form-row">
+            <input type="text" placeholder="Name" required />
+            <input type="email" placeholder="E Mail" required />
+          </div>
+          <div class="form-row">
+            <input type="text" placeholder="Phone Number" required />
+            <input type="text" placeholder="Your City" required />
+          </div>
+          <textarea placeholder="Your Message Here" rows="4" required></textarea>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
   </div>
 `;
 document.body.appendChild(contact);
+
 
 // ===== PRE-FOOTER =====
 const preFooter = document.createElement("section");

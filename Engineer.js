@@ -83,7 +83,6 @@ document.body.innerHTML += `
   </section>
 `;
 
-
 // ===== PRE-FOOTER =====
 const preFooter = document.createElement("section");
 preFooter.className = "pre-footer";

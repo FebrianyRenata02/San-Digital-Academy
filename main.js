@@ -265,6 +265,46 @@ contact.innerHTML = `
 `;
 document.body.appendChild(contact);
 
+// ===== PRE-FOOTER =====
+const preFooter = document.createElement("section");
+preFooter.className = "pre-footer";
+preFooter.innerHTML = `
+  <div class="pre-footer-container">
+    <div class="footer-column">
+      <img src="img/Agency Logo Transparant.png" alt="San Logo" class="footer-logo" />
+    </div>
+
+    <div class="footer-column">
+      <h3>Profil Kami</h3>
+      <ul>
+        <li>Tentang Perusahaan</li>
+        <li>Kontak</li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Layanan Kami</h3>
+      <ul>
+        <li>UI/UX Design</li>
+        <li>Web Development</li>
+        <li>Digital Marketing</li>
+        <li>IT Consulting</li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Insight</h3>
+      <ul>
+        <li>Blog</li>
+        <li>Karir</li>
+        <li>Studi Kasus</li>
+      </ul>
+    </div>
+  </div>
+`;
+document.body.appendChild(preFooter);
+
+
 // ===== FOOTER =====
 const footer = document.createElement("footer");
 footer.innerHTML = `<p>© 2025 San Digital Agency. All Rights Reserved.</p>`;

@@ -1,28 +1,28 @@
 // ===== NAVBAR DATA =====
 const navItems = [{
-        name: "Home",
-        id: "home"
-    },
-    {
-        name: "About",
-        id: "about"
-    },
-    {
-        name: "Services",
-        id: "services"
-    },
-    {
-        name: "Portfolio",
-        id: "portfolio"
-    },
-    {
-        name: "Blog",
-        id: "blog"
-    },
-    {
-        name: "Contact",
-        id: "contact"
-    },
+    name: "Home",
+    id: "home"
+  },
+  {
+    name: "About",
+    id: "about"
+  },
+  {
+    name: "Services",
+    id: "services"
+  },
+  {
+    name: "Portfolio",
+    id: "portfolio"
+  },
+  {
+    name: "Blog",
+    id: "blog"
+  },
+  {
+    name: "Contact",
+    id: "contact"
+  },
 ];
 
 // ===== HEADER =====
@@ -33,7 +33,7 @@ header.className = "header";
 const topBar = document.createElement("div");
 topBar.className = "top-bar";
 topBar.textContent =
-    "Kami adalah Perusahaan San Digital profesional, mari bekerja sama hubungi kami!";
+  "Kami adalah Perusahaan San Digital profesional, mari bekerja sama hubungi kami!";
 header.appendChild(topBar);
 
 // ===== NAVBAR =====
@@ -43,31 +43,24 @@ nav.className = "navbar";
 const logo = document.createElement("img");
 logo.src = "img/Agency Logo Transparant.png";
 logo.alt = "San Digital Agency";
-logo.className = "logo scroll-top"; // ← tambahkan class scroll-top agar bisa klik scroll ke atas
+logo.className = "logo scroll-top";
 
-// daftar menu
 const navList = document.createElement("ul");
 navList.className = "nav-list";
 
 navItems.forEach((item) => {
-    const li = document.createElement("li");
-    const a = document.createElement("a");
-    a.textContent = item.name;
-    a.href = `#${item.id}`;
-    li.appendChild(a);
-    navList.appendChild(li);
+  const li = document.createElement("li");
+  const a = document.createElement("a");
+  a.textContent = item.name;
+  a.href = `#${item.id}`;
+  li.appendChild(a);
+  navList.appendChild(li);
 });
 
-// ===== HAMBURGER MENU =====
 const hamburger = document.createElement("div");
 hamburger.className = "hamburger";
-hamburger.innerHTML = `
-  <span></span>
-  <span></span>
-  <span></span>
-`;
+hamburger.innerHTML = `<span></span><span></span><span></span>`;
 
-// gabungkan navbar
 nav.appendChild(logo);
 nav.appendChild(navList);
 nav.appendChild(hamburger);
@@ -81,7 +74,7 @@ hero.id = "home";
 hero.innerHTML = `
   <div class="hero-text">
     <h1>Buka Potensi<br>Digital Anda</h1>
-    <p>Mulai Partnership & Bangun Karir Bersama Kami. Tingkatkan performa bisnis Anda & brand melalui channel digital seperti Website, Google, Facebook, Instagram, YouTube, dll.</p>
+    <p>Mulai Partnership & Bangun Karir Bersama Kami. Tingkatkan performa bisnis Anda melalui channel digital seperti Website, Google, Facebook, Instagram, YouTube, dll.</p>
     <a href="ourteam.html"><button class="cta-btn">Our Team</button></a>
   </div>
   <img src="img/trafik.png" class="hero-img" alt="Grafik Pertumbuhan">
@@ -133,20 +126,20 @@ document.body.appendChild(services);
 
 // ===== PORTFOLIO =====
 const portfolioData = [{
-        img: "img/programmer.svg",
-        link: "https://febrianyrenata02.github.io/web-portofolio-saya/portofolio",
-        title: "Portfolio Rena",
-    },
-    {
-        img: "/img/online-resume-animate.svg",
-        link: "https://febrianyrenata.vercel.app/",
-        title: "Portfolio Rena Versi Update",
-    },
-    {
-        img: "https://specialteam.vercel.app/assets/img/main_icon2.svg",
-        link: "https://specialteam.vercel.app/",
-        title: "Special Team",
-    },
+    img: "img/programmer.svg",
+    link: "https://febrianyrenata02.github.io/web-portofolio-saya/portofolio",
+    title: "Portfolio Rena",
+  },
+  {
+    img: "/img/online-resume-animate.svg",
+    link: "https://febrianyrenata.vercel.app/",
+    title: "Portfolio Rena Versi Update",
+  },
+  {
+    img: "https://specialteam.vercel.app/assets/img/main_icon2.svg",
+    link: "https://specialteam.vercel.app/",
+    title: "Special Team",
+  },
 ];
 
 const portfolio = document.createElement("section");
@@ -161,34 +154,34 @@ const portfolioGrid = document.createElement("div");
 portfolioGrid.className = "grid";
 
 portfolioData.forEach((item) => {
-    const box = document.createElement("div");
-    box.className = "box";
+  const box = document.createElement("div");
+  box.className = "box";
 
-    const a = document.createElement("a");
-    a.href = item.link;
-    a.target = "_blank";
-    a.rel = "noopener noreferrer";
+  const a = document.createElement("a");
+  a.href = item.link;
+  a.target = "_blank";
+  a.rel = "noopener noreferrer";
 
-    const img = document.createElement("img");
-    img.src = item.img;
-    img.alt = item.title;
-    img.style.width = "200px";
-    img.style.height = "200px";
-    img.style.objectFit = "contain";
-    img.style.display = "block";
-    img.style.margin = "0 auto";
+  const img = document.createElement("img");
+  img.src = item.img;
+  img.alt = item.title;
+  img.style.width = "200px";
+  img.style.height = "200px";
+  img.style.objectFit = "contain";
+  img.style.display = "block";
+  img.style.margin = "0 auto";
 
-    const title = document.createElement("p");
-    title.textContent = item.title;
-    title.style.textAlign = "center";
-    title.style.fontWeight = "600";
-    title.style.marginTop = "8px";
-    title.style.color = "#333";
+  const title = document.createElement("p");
+  title.textContent = item.title;
+  title.style.textAlign = "center";
+  title.style.fontWeight = "600";
+  title.style.marginTop = "8px";
+  title.style.color = "#333";
 
-    a.appendChild(img);
-    a.appendChild(title);
-    box.appendChild(a);
-    portfolioGrid.appendChild(box);
+  a.appendChild(img);
+  a.appendChild(title);
+  box.appendChild(a);
+  portfolioGrid.appendChild(box);
 });
 
 portfolio.appendChild(portfolioGrid);
@@ -196,17 +189,17 @@ document.body.appendChild(portfolio);
 
 // ===== BLOG =====
 const blogData = [{
-        img: "img/UI : UX.png",
-        link: "UI-UX.html"
-    },
-    {
-        img: "img/Development.png",
-        link: "Developer.html"
-    },
-    {
-        img: "img/Engineer.png",
-        link: "Engineer.html"
-    },
+    img: "img/UI : UX.png",
+    link: "UI-UX.html"
+  },
+  {
+    img: "img/Development.png",
+    link: "Developer.html"
+  },
+  {
+    img: "img/Engineer.png",
+    link: "Engineer.html"
+  },
 ];
 
 const blog = document.createElement("section");
@@ -221,72 +214,61 @@ const blogGrid = document.createElement("div");
 blogGrid.className = "grid";
 
 blogData.forEach((item) => {
-    const box = document.createElement("div");
-    box.className = "box";
+  const box = document.createElement("div");
+  box.className = "box";
 
-    const a = document.createElement("a");
-    a.href = item.link;
-    a.target = "_blank";
-    a.rel = "noopener noreferrer";
+  const a = document.createElement("a");
+  a.href = item.link;
+  a.target = "_blank";
+  a.rel = "noopener noreferrer";
 
-    const img = document.createElement("img");
-    img.src = item.img;
-    img.alt = "Blog Image";
-    img.style.width = "100%";
-    img.style.height = "200px";
-    img.style.objectFit = "cover";
-    img.style.borderRadius = "10px";
-    img.style.display = "block";
+  const img = document.createElement("img");
+  img.src = item.img;
+  img.alt = "Blog Image";
+  img.style.width = "100%";
+  img.style.height = "200px";
+  img.style.objectFit = "cover";
+  img.style.borderRadius = "10px";
+  img.style.display = "block";
 
-    a.appendChild(img);
-    box.appendChild(a);
-    blogGrid.appendChild(box);
+  a.appendChild(img);
+  box.appendChild(a);
+  blogGrid.appendChild(box);
 });
 
 blog.appendChild(blogGrid);
 document.body.appendChild(blog);
 
-// ===== CONTACT SECTION =====
+
+// ===== CONTACT =====
 const contact = document.createElement("section");
 contact.className = "contact";
 contact.id = "contact";
-
 contact.innerHTML = `
-  <div class="contact-wrapper">
-    <h2>Contact</h2>
-    <div class="contact-container">
-      <div class="contact-map">
-        <iframe 
-          src="https://maps.google.com/maps?q=Bandung&t=&z=13&ie=UTF8&iwloc=&output=embed"
-          loading="lazy"
-          allowfullscreen>
-        </iframe>
-      </div>
+  <h2>Hubungi Kami</h2>
+  <form id="contactForm">
+    <input type="text" id="name" placeholder="Name" required />
+    <input type="email" id="email" placeholder="Email" required />
+    <input type="text" id="phone" placeholder="Phone Number" required />
+    <input type="text" id="city" placeholder="Your City" required />
+    <textarea id="message" placeholder="Message" required></textarea>
+    <button type="submit">Kirim</button>
+  </form>
+  <p id="response"></p>
 
-      <div class="contact-info">
-        <p>
-          Hubungi kami untuk konsultasi maupun jika kamu punya pertanyaan.
-          Kamu dapat mengisi form yang sudah disediakan atau melalui kontak yang ada.
-        </p>
-        <form>
-          <div class="form-row">
-            <input type="text" placeholder="Name" required />
-            <input type="email" placeholder="E Mail" required />
-          </div>
-          <div class="form-row">
-            <input type="text" placeholder="Phone Number" required />
-            <input type="text" placeholder="Your City" required />
-          </div>
-          <textarea placeholder="Your Message Here" rows="4" required></textarea>
-          <button type="submit">Submit</button>
-        </form>
-      </div>
-    </div>
+  <!-- 🌍 Tambahkan MAP di bawah form -->
+  <div class="map-container">
+    <iframe
+    src="https://maps.google.com/maps?q=Bandung&t=&z=13&ie=UTF8&iwloc=&output=embed"
+      width="100%"
+      height="500"
+      style="border:0;"
+      allowfullscreen
+      loading="lazy">
+    </iframe>
   </div>
 `;
 document.body.appendChild(contact);
-
-
 
 // ===== PRE-FOOTER =====
 const preFooter = document.createElement("section");
@@ -338,48 +320,68 @@ document.body.appendChild(footer);
 
 // ===== SMOOTH SCROLL MENU =====
 document.querySelectorAll(".nav-list a").forEach((link) => {
-    link.addEventListener("click", (e) => {
-        e.preventDefault();
-        const targetId = link.getAttribute("href").substring(1);
-        const target = document.getElementById(targetId);
-        if (target) {
-            window.scrollTo({
-                top: target.offsetTop - 120,
-                behavior: "smooth",
-            });
-        }
-    });
-});
-
-// ===== BUTTON "LAYANAN KAMI" SCROLL KE SERVICES =====
-document.querySelector(".about .cta-btn").addEventListener("click", () => {
-    const servicesSection = document.getElementById("services");
-    if (servicesSection) {
-        window.scrollTo({
-            top: servicesSection.offsetTop - 120,
-            behavior: "smooth",
-        });
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    const targetId = link.getAttribute("href").substring(1);
+    const target = document.getElementById(targetId);
+    if (target) {
+      window.scrollTo({
+        top: target.offsetTop - 120,
+        behavior: "smooth",
+      });
     }
+  });
 });
 
-// ===== LOGO KLIK SCROLL KE ATAS =====
-document.querySelectorAll(".scroll-top").forEach((el) => {
-    el.addEventListener("click", () => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-        });
+// ===== SCROLL KE ATAS SAAT LOGO PRE-FOOTER DIKLIK =====
+const preFooterLogo = document.querySelector(".footer-logo"); // ganti sesuai class logomu
+
+if (preFooterLogo) {
+  preFooterLogo.addEventListener("click", (e) => {
+    e.preventDefault(); // cegah link reload kalau pakai <a>
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
     });
-});
+    history.pushState(null, "", "#home"); // ubah URL hash ke #home
+  });
+}
 
-// ===== SOSIAL MEDIA =====
-const heroText = document.querySelector(".hero-text");
-const socialIcons = document.createElement("div");
-socialIcons.className = "social-icons";
-socialIcons.innerHTML = `
-  <a href="https://github.com/SansDev-Comunity" target="_blank"><i class="fa-brands fa-github"></i></a>
-  <a href="https://www.instagram.com/sunsetbrew56/" target="_blank"><i class="fab fa-instagram"></i></a>
-  <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
-  <a href="https://discord.gg/VHscdktb24" target="_blank"><i class="fa-brands fa-discord"></i></a>
-`;
-heroText.appendChild(socialIcons);
+// ===== FORM HANDLER =====
+document.getElementById("contactForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const data = {
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    phone: document.getElementById("phone").value,
+    city: document.getElementById("city").value,
+    message: document.getElementById("message").value,
+  };
+
+  try {
+    const res = await fetch("http://localhost:3000/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data),
+    });
+
+    const result = await res.json();
+
+    if (result.success) {
+      document.getElementById("response").textContent = "✅ Pesan berhasil dikirim!";
+
+      // 🔁 Tambahkan jeda 1.5 detik sebelum reload
+      setTimeout(() => {
+        window.location.reload();
+      }, 1500);
+    } else {
+      document.getElementById("response").textContent = "❌ Gagal mengirim pesan.";
+    }
+  } catch (err) {
+    document.getElementById("response").textContent =
+      "⚠️ Terjadi kesalahan koneksi ke server.";
+  }
+});

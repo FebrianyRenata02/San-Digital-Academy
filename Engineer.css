@@ -83,8 +83,8 @@ body {
 .topbar {
   background: #56a3ef;
   color: #fff;
-  padding-top: 3rem;
-  padding-bottom: 1rem;
+  padding-top: 2.5rem;
+  padding-bottom: 0.5rem;
   font-size: clamp(0.8rem, 1vw, 0.95rem);
 }
 

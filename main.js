@@ -347,6 +347,7 @@ if (preFooterLogo) {
   });
 }
 
+// ===== FORM HANDLER =====
 document.getElementById("contactForm").addEventListener("submit", async(e) => {
     e.preventDefault();
 
@@ -359,7 +360,7 @@ document.getElementById("contactForm").addEventListener("submit", async(e) => {
     };
 
     try {
-        const res = await fetch("submit_contact.php", {
+        const res = await fetch("http://localhost:3000/api/contact", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -371,9 +372,13 @@ document.getElementById("contactForm").addEventListener("submit", async(e) => {
 
         if (result.success) {
             document.getElementById("response").textContent = "✅ Pesan berhasil dikirim!";
-            setTimeout(() => window.location.reload(), 1500);
+
+            // 🔁 Tambahkan jeda 1.5 detik sebelum reload
+            setTimeout(() => {
+                window.location.reload();
+            }, 1500);
         } else {
-            document.getElementById("response").textContent = "❌ Gagal mengirim pesan: " + result.message;
+            document.getElementById("response").textContent = "❌ Gagal mengirim pesan.";
         }
     } catch (err) {
         document.getElementById("response").textContent =

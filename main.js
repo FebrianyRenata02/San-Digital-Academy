@@ -315,7 +315,7 @@ document.body.appendChild(preFooter);
 
 // ===== FOOTER =====
 const footer = document.createElement("footer");
-footer.innerHTML = `<p>© 2025 San Digital Agency. All Rights Reserved. <br> Created by Febriany Renata</p>`;
+footer.innerHTML = `<p>© 2025 San Digital Agency. All Rights Reserved.</p>`;
 document.body.appendChild(footer);
 
 // ===== SMOOTH SCROLL MENU =====

@@ -347,41 +347,36 @@ if (preFooterLogo) {
   });
 }
 
-// ===== FORM HANDLER =====
-document.getElementById("contactForm").addEventListener("submit", async (e) => {
-  e.preventDefault();
+document.getElementById("contactForm").addEventListener("submit", async(e) => {
+    e.preventDefault();
 
-  const data = {
-    name: document.getElementById("name").value,
-    email: document.getElementById("email").value,
-    phone: document.getElementById("phone").value,
-    city: document.getElementById("city").value,
-    message: document.getElementById("message").value,
-  };
+    const data = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        phone: document.getElementById("phone").value,
+        city: document.getElementById("city").value,
+        message: document.getElementById("message").value,
+    };
 
-  try {
-    const res = await fetch("http://localhost:3000/api/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(data),
-    });
+    try {
+        const res = await fetch("submit_contact.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data),
+        });
 
-    const result = await res.json();
+        const result = await res.json();
 
-    if (result.success) {
-      document.getElementById("response").textContent = "✅ Pesan berhasil dikirim!";
-
-      // 🔁 Tambahkan jeda 1.5 detik sebelum reload
-      setTimeout(() => {
-        window.location.reload();
-      }, 1500);
-    } else {
-      document.getElementById("response").textContent = "❌ Gagal mengirim pesan.";
+        if (result.success) {
+            document.getElementById("response").textContent = "✅ Pesan berhasil dikirim!";
+            setTimeout(() => window.location.reload(), 1500);
+        } else {
+            document.getElementById("response").textContent = "❌ Gagal mengirim pesan: " + result.message;
+        }
+    } catch (err) {
+        document.getElementById("response").textContent =
+            "⚠️ Terjadi kesalahan koneksi ke server.";
     }
-  } catch (err) {
-    document.getElementById("response").textContent =
-      "⚠️ Terjadi kesalahan koneksi ke server.";
-  }
 });

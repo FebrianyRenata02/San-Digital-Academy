@@ -1,71 +1,97 @@
-// ===== NAVBAR DATA =====
-const navItems = [{
-    name: "Home",
-    id: "home"
-  },
-  {
-    name: "About",
-    id: "about"
-  },
-  {
-    name: "Services",
-    id: "services"
-  },
-  {
-    name: "Portfolio",
-    id: "portfolio"
-  },
-  {
-    name: "Blog",
-    id: "blog"
-  },
-  {
-    name: "Contact",
-    id: "contact"
-  },
-];
-
-// ===== HEADER =====
-const header = document.createElement("header");
-header.className = "header";
-
-// ===== TOP BAR =====
+// =======================
+//  NAVBAR STRUCTURE
+// =======================
 const topBar = document.createElement("div");
 topBar.className = "top-bar";
 topBar.textContent =
-  "Kami adalah Perusahaan San Digital profesional, mari bekerja sama hubungi kami!";
-header.appendChild(topBar);
+    "kami adalah Perusahaan San Digital profesional, mari bekerja sama hubungi kami";
+document.body.appendChild(topBar);
 
-// ===== NAVBAR =====
-const nav = document.createElement("nav");
-nav.className = "navbar";
+const navbar = document.createElement("nav");
+navbar.className = "navbar";
 
+// ====== Logo ======
 const logo = document.createElement("img");
-logo.src = "img/Agency Logo Transparant.png";
-logo.alt = "San Digital Agency";
-logo.className = "logo scroll-top";
+logo.src = "img/Agency Logo Transparant.png"; // ganti sesuai file logo kamu
+logo.alt = "San Digital Logo";
+logo.className = "logo";
+navbar.appendChild(logo);
 
+// ====== Nav List (Tengah) ======
 const navList = document.createElement("ul");
 navList.className = "nav-list";
 
-navItems.forEach((item) => {
-  const li = document.createElement("li");
-  const a = document.createElement("a");
-  a.textContent = item.name;
-  a.href = `#${item.id}`;
-  li.appendChild(a);
-  navList.appendChild(li);
-});
+const navItems = [{
+        name: "Home",
+        id: "home"
+    },
+    {
+        name: "About",
+        id: "about"
+    },
+    {
+        name: "Services",
+        id: "services"
+    },
+    {
+        name: "Portfolio",
+        id: "portfolio"
+    },
+    {
+        name: "Blog",
+        id: "blog"
+    },
+    {
+        name: "Contact",
+        id: "contact"
+    },
+];
 
+navItems.forEach((item) => {
+    const li = document.createElement("li");
+    const a = document.createElement("a");
+    a.href = `#${item.id}`;
+    a.textContent = item.name;
+    li.appendChild(a);
+    navList.appendChild(li);
+});
+navbar.appendChild(navList);
+
+// ====== Discord Button (Kanan) ======
+const discordWrapper = document.createElement("div");
+discordWrapper.className = "discord-btn-wrapper";
+
+const discordBtn = document.createElement("a");
+discordBtn.href = "https://discord.gg/VHscdktb24"; // ganti link Discord kamu
+discordBtn.target = "_blank";
+discordBtn.className = "discord-btn";
+discordBtn.innerHTML = `
+  <section alt="Discord" class="discord-icon" /><i class="fa-brands fa-discord"></i>
+  Join Discord
+`;
+discordWrapper.appendChild(discordBtn);
+navbar.appendChild(discordWrapper);
+
+
+// ====== Hamburger (Mobile) ======
 const hamburger = document.createElement("div");
 hamburger.className = "hamburger";
-hamburger.innerHTML = `<span></span><span></span><span></span>`;
+hamburger.innerHTML = `
+  <span></span>
+  <span></span>
+  <span></span>
+`;
+navbar.appendChild(hamburger);
 
-nav.appendChild(logo);
-nav.appendChild(navList);
-nav.appendChild(hamburger);
-header.appendChild(nav);
-document.body.appendChild(header);
+document.body.appendChild(navbar);
+
+// =======================
+//  NAVBAR FUNCTIONALITY
+// =======================
+hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navList.classList.toggle("active");
+});
 
 // ===== HERO =====
 const hero = document.createElement("section");
@@ -75,7 +101,7 @@ hero.innerHTML = `
   <div class="hero-text">
     <h1>Buka Potensi<br>Digital Anda</h1>
     <p>Mulai Partnership & Bangun Karir Bersama Kami. Tingkatkan performa bisnis Anda melalui channel digital seperti Website, Google, Facebook, Instagram, YouTube, dll.</p>
-    <a href="ourteam.html"><button class="cta-btn">Our Team</button></a>
+ <a href="ourteam.html"><button class="cta-btn">Our Team</button></a>
   </div>
   <img src="img/trafik.png" class="hero-img" alt="Grafik Pertumbuhan">
 `;
@@ -129,20 +155,20 @@ document.body.appendChild(services);
 
 // ===== PORTFOLIO =====
 const portfolioData = [{
-    img: "img/programmer.svg",
-    link: "https://febrianyrenata02.github.io/web-portofolio-saya/portofolio",
-    title: "Portfolio Rena",
-  },
-  {
-    img: "/img/online-resume-animate.svg",
-    link: "https://febrianyrenata.vercel.app/",
-    title: "Portfolio Rena Versi Update",
-  },
-  {
-    img: "https://specialteam.vercel.app/assets/img/main_icon2.svg",
-    link: "https://specialteam.vercel.app/",
-    title: "Special Team",
-  },
+        img: "img/programmer.svg",
+        link: "https://febrianyrenata02.github.io/web-portofolio-saya/portofolio",
+        title: "Portfolio Rena",
+    },
+    {
+        img: "/img/online-resume-animate.svg",
+        link: "https://febrianyrenata.vercel.app/",
+        title: "Portfolio Rena Versi Update",
+    },
+    {
+        img: "https://specialteam.vercel.app/assets/img/main_icon2.svg",
+        link: "https://specialteam.vercel.app/",
+        title: "Special Team",
+    },
 ];
 
 const portfolio = document.createElement("section");
@@ -157,34 +183,34 @@ const portfolioGrid = document.createElement("div");
 portfolioGrid.className = "grid";
 
 portfolioData.forEach((item) => {
-  const box = document.createElement("div");
-  box.className = "box";
+    const box = document.createElement("div");
+    box.className = "box";
 
-  const a = document.createElement("a");
-  a.href = item.link;
-  a.target = "_blank";
-  a.rel = "noopener noreferrer";
+    const a = document.createElement("a");
+    a.href = item.link;
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
 
-  const img = document.createElement("img");
-  img.src = item.img;
-  img.alt = item.title;
-  img.style.width = "200px";
-  img.style.height = "200px";
-  img.style.objectFit = "contain";
-  img.style.display = "block";
-  img.style.margin = "0 auto";
+    const img = document.createElement("img");
+    img.src = item.img;
+    img.alt = item.title;
+    img.style.width = "200px";
+    img.style.height = "200px";
+    img.style.objectFit = "contain";
+    img.style.display = "block";
+    img.style.margin = "0 auto";
 
-  const title = document.createElement("p");
-  title.textContent = item.title;
-  title.style.textAlign = "center";
-  title.style.fontWeight = "600";
-  title.style.marginTop = "8px";
-  title.style.color = "#333";
+    const title = document.createElement("p");
+    title.textContent = item.title;
+    title.style.textAlign = "center";
+    title.style.fontWeight = "600";
+    title.style.marginTop = "8px";
+    title.style.color = "#333";
 
-  a.appendChild(img);
-  a.appendChild(title);
-  box.appendChild(a);
-  portfolioGrid.appendChild(box);
+    a.appendChild(img);
+    a.appendChild(title);
+    box.appendChild(a);
+    portfolioGrid.appendChild(box);
 });
 
 portfolio.appendChild(portfolioGrid);
@@ -192,17 +218,17 @@ document.body.appendChild(portfolio);
 
 // ===== BLOG =====
 const blogData = [{
-    img: "img/UI : UX.png",
-    link: "UI-UX.html"
-  },
-  {
-    img: "img/Development.png",
-    link: "Developer.html"
-  },
-  {
-    img: "img/Engineer.png",
-    link: "Engineer.html"
-  },
+        img: "img/UI : UX.png",
+        link: "UI-UX.html"
+    },
+    {
+        img: "img/Development.png",
+        link: "Developer.html"
+    },
+    {
+        img: "img/Engineer.png",
+        link: "Engineer.html"
+    },
 ];
 
 const blog = document.createElement("section");
@@ -217,26 +243,26 @@ const blogGrid = document.createElement("div");
 blogGrid.className = "grid";
 
 blogData.forEach((item) => {
-  const box = document.createElement("div");
-  box.className = "box";
+    const box = document.createElement("div");
+    box.className = "box";
 
-  const a = document.createElement("a");
-  a.href = item.link;
-  a.target = "_blank";
-  a.rel = "noopener noreferrer";
+    const a = document.createElement("a");
+    a.href = item.link;
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
 
-  const img = document.createElement("img");
-  img.src = item.img;
-  img.alt = "Blog Image";
-  img.style.width = "100%";
-  img.style.height = "200px";
-  img.style.objectFit = "cover";
-  img.style.borderRadius = "10px";
-  img.style.display = "block";
+    const img = document.createElement("img");
+    img.src = item.img;
+    img.alt = "Blog Image";
+    img.style.width = "100%";
+    img.style.height = "200px";
+    img.style.objectFit = "cover";
+    img.style.borderRadius = "10px";
+    img.style.display = "block";
 
-  a.appendChild(img);
-  box.appendChild(a);
-  blogGrid.appendChild(box);
+    a.appendChild(img);
+    box.appendChild(a);
+    blogGrid.appendChild(box);
 });
 
 blog.appendChild(blogGrid);
@@ -323,31 +349,31 @@ document.body.appendChild(footer);
 
 // ===== SMOOTH SCROLL MENU =====
 document.querySelectorAll(".nav-list a").forEach((link) => {
-  link.addEventListener("click", (e) => {
-    e.preventDefault();
-    const targetId = link.getAttribute("href").substring(1);
-    const target = document.getElementById(targetId);
-    if (target) {
-      window.scrollTo({
-        top: target.offsetTop - 120,
-        behavior: "smooth",
-      });
-    }
-  });
+    link.addEventListener("click", (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute("href").substring(1);
+        const target = document.getElementById(targetId);
+        if (target) {
+            window.scrollTo({
+                top: target.offsetTop - 120,
+                behavior: "smooth",
+            });
+        }
+    });
 });
 
 // ===== SCROLL KE ATAS SAAT LOGO PRE-FOOTER DIKLIK =====
 const preFooterLogo = document.querySelector(".footer-logo"); // ganti sesuai class logomu
 
 if (preFooterLogo) {
-  preFooterLogo.addEventListener("click", (e) => {
-    e.preventDefault(); // cegah link reload kalau pakai <a>
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
+    preFooterLogo.addEventListener("click", (e) => {
+        e.preventDefault(); // cegah link reload kalau pakai <a>
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+        history.pushState(null, "", "#home"); // ubah URL hash ke #home
     });
-    history.pushState(null, "", "#home"); // ubah URL hash ke #home
-  });
 }
 
 // ===== FORM HANDLER =====

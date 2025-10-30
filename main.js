@@ -92,6 +92,9 @@ about.innerHTML = `
   <div class="about-right">
     <h2>San Digital Agency</h2>
     <p>Kami adalah perusahaan digital yang membantu meningkatkan performa bisnis Anda melalui branding, desain, dan teknologi terkini.</p>
+    <p>Web Agency merupakan jasa pembuatan Desain, website profesional untuk keperluan bisnis seperti company profile maupun portofolio pribadi kamu,
+
+Mulai dari SEO, Marketing, etc</p>
     <button class="cta-btn">Layanan Kami</button>
   </div>
 `;

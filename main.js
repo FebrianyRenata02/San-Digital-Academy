@@ -399,7 +399,7 @@ document.body.appendChild(footer);
 //  WHATSAPP FLOAT BUTTON
 // =======================
 const waButton = document.createElement("a");
-waButton.href = "https://wa.me/6281234567890"; // Ganti nomor di sini
+waButton.href = "https://wa.me/6282113683120"; // Ganti nomor di sini
 waButton.target = "_blank";
 waButton.className = "whatsapp-float";
 waButton.innerHTML = `<i class="fab fa-whatsapp"></i>`;

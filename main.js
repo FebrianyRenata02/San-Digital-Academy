@@ -395,6 +395,25 @@ const footer = document.createElement("footer");
 footer.innerHTML = `<p>© 2025 San Digital Agency. All Rights Reserved.</p>`;
 document.body.appendChild(footer);
 
+// =======================
+//  WHATSAPP FLOAT BUTTON
+// =======================
+const waButton = document.createElement("a");
+waButton.href = "https://wa.me/6281234567890"; // Ganti nomor di sini
+waButton.target = "_blank";
+waButton.className = "whatsapp-float";
+waButton.innerHTML = `<i class="fab fa-whatsapp"></i>`;
+document.body.appendChild(waButton);
+
+// Animasi muncul halus
+document.addEventListener("DOMContentLoaded", () => {
+    waButton.style.opacity = "0";
+    waButton.style.transition = "opacity 0.8s ease";
+    setTimeout(() => {
+        waButton.style.opacity = "1";
+    }, 600);
+});
+
 // ===== SMOOTH SCROLL MENU =====
 document.querySelectorAll(".nav-list a").forEach((link) => {
     link.addEventListener("click", (e) => {

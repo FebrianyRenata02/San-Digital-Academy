@@ -235,45 +235,143 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 180px 80px 80px;
+  padding: 80px 8%;
+  background: #fff;
+  color: #111;
+  min-height: 100vh;
   flex-wrap: wrap;
-  background: linear-gradient(180deg, #fff 60%, #f6faff 100%);
+  gap: 40px;
 }
 
 .hero-text {
-  flex: 1 1 400px;
+  flex: 1 1 480px;
+  max-width: 600px;
 }
 
 .hero-text h1 {
-  font-size: 2.8rem;
-  color: #000;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: #111;
+}
+
+.hero-text h1 span {
+  color: #007bff;
 }
 
 .hero-text p {
-  margin: 25px 0;
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
   line-height: 1.6;
-  color: #444;
+  margin-bottom: 30px;
+  color: #333;
 }
 
 .cta-btn {
-  background-color: #56a3ef;
-  border: none;
-  color: white;
+  display: inline-block;
+  background-color: #38a4ff;
+  color: #fff;
   padding: 12px 30px;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 10px rgba(56, 164, 255, 0.3);
 }
 
 .cta-btn:hover {
-  background-color: #0078d4;
+  background-color: #007bff;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
 }
 
+/* =========================
+   HERO IMAGE
+========================= */
 .hero-img {
   flex: 1 1 400px;
   max-width: 500px;
   width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* =========================
+   SOCIAL ICONS
+========================= */
+.social-icons {
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.social-icons a {
+  color: #111;
+  font-size: 1.5rem;
+  transition: 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #007bff;
+}
+
+/* =========================
+   RESPONSIVE (TABLET)
+========================= */
+@media (max-width: 992px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 6%;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero-img {
+    margin-top: 40px;
+    width: 80%;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .cta-btn {
+    margin: 0 auto;
+  }
+}
+
+/* =========================
+   RESPONSIVE (MOBILE)
+========================= */
+@media (max-width: 600px) {
+  .hero {
+    padding: 50px 5%;
+  }
+
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-text p {
+    font-size: 0.95rem;
+  }
+
+  .cta-btn {
+    padding: 10px 24px;
+    font-size: 0.95rem;
+  }
+
+  .hero-img {
+    width: 90%;
+  }
+
+  .social-icons a {
+    font-size: 1.3rem;
+  }
 }
 
 /* =========================

@@ -117,20 +117,20 @@ socialContainer.className = "social-icons";
 
 const socialLinks = [{
         icon: "fab fa-instagram",
-        url: "#"
-    },
-    {
-        icon: "fab fa-facebook",
-        url: "#"
+        url: "https://www.instagram.com/sunsetbrew56/"
     },
     {
         icon: "fab fa-github",
-        url: "#"
+        url: "https://github.com/SansDev-Comunity"
     },
     {
-        icon: "fab fa-linkedin",
-        url: "#"
+        icon: "fab fa-whatsapp",
+        url: "https://wa.me/6282113683120"
     },
+    {
+        icon: "fab fa-youtube",
+        url: "https://www.youtube.com/"
+    }
 ];
 
 socialLinks.forEach((item) => {

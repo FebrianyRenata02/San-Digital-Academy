@@ -12,12 +12,12 @@ navbar.className = "navbar";
 
 // ====== Logo ======
 const logo = document.createElement("img");
-logo.src = "img/Agency Logo Transparant.png"; // ganti sesuai file logo kamu
+logo.src = "img/Agency Logo Transparant.png";
 logo.alt = "San Digital Logo";
 logo.className = "logo";
 navbar.appendChild(logo);
 
-// ====== Nav List (Tengah) ======
+// ====== Nav List ======
 const navList = document.createElement("ul");
 navList.className = "nav-list";
 
@@ -57,30 +57,22 @@ navItems.forEach((item) => {
 });
 navbar.appendChild(navList);
 
-// ====== Discord Button (Kanan) ======
+// ====== Discord Button ======
 const discordWrapper = document.createElement("div");
 discordWrapper.className = "discord-btn-wrapper";
 
 const discordBtn = document.createElement("a");
-discordBtn.href = "https://discord.gg/VHscdktb24"; // ganti link Discord kamu
+discordBtn.href = "https://discord.gg/VHscdktb24";
 discordBtn.target = "_blank";
 discordBtn.className = "discord-btn";
-discordBtn.innerHTML = `
-  <section alt="Discord" class="discord-icon" /><i class="fa-brands fa-discord"></i>
-  Join Discord
-`;
+discordBtn.innerHTML = `<i class="fa-brands fa-discord"></i> Join Discord`;
 discordWrapper.appendChild(discordBtn);
 navbar.appendChild(discordWrapper);
-
 
 // ====== Hamburger (Mobile) ======
 const hamburger = document.createElement("div");
 hamburger.className = "hamburger";
-hamburger.innerHTML = `
-  <span></span>
-  <span></span>
-  <span></span>
-`;
+hamburger.innerHTML = `<span></span><span></span><span></span>`;
 navbar.appendChild(hamburger);
 
 document.body.appendChild(navbar);
@@ -93,7 +85,9 @@ hamburger.addEventListener("click", () => {
     navList.classList.toggle("active");
 });
 
-/// ===== HERO SECTION =====
+// =======================
+//  HERO SECTION
+// =======================
 const hero = document.createElement("section");
 hero.className = "hero";
 hero.id = "home";
@@ -117,7 +111,7 @@ heroBtn.className = "cta-btn";
 heroBtn.textContent = "Our Team";
 heroText.appendChild(heroBtn);
 
-// === Hero Social Media Icons ===
+// === Hero Social Media Icons (Lingkaran Neon) ===
 const socialContainer = document.createElement("div");
 socialContainer.className = "social-icons";
 
@@ -142,23 +136,23 @@ const socialLinks = [{
 socialLinks.forEach((item) => {
     const a = document.createElement("a");
     a.href = item.url;
+    a.target = "_blank";
+    a.className = "social-link";
     a.innerHTML = `<i class="${item.icon}"></i>`;
     socialContainer.appendChild(a);
 });
-
 heroText.appendChild(socialContainer);
 
 // === Hero Right (Image) ===
 const heroImage = document.createElement("img");
-heroImage.src = "img/trafik.png"; // Ganti dengan gambar yang sesuai
+heroImage.src = "img/trafik.png";
 heroImage.alt = "Grafik Pertumbuhan";
 heroImage.className = "hero-img";
 
-// === Gabungkan ke dalam Hero Section ===
 hero.appendChild(heroText);
 hero.appendChild(heroImage);
-
 document.body.appendChild(hero);
+
 
 // ===== ABOUT =====
 const about = document.createElement("section");

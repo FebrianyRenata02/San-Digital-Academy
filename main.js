@@ -93,38 +93,73 @@ hamburger.addEventListener("click", () => {
     navList.classList.toggle("active");
 });
 
-// ===== HERO =====
+/// ===== HERO SECTION =====
 const hero = document.createElement("section");
 hero.className = "hero";
 hero.id = "home";
-hero.innerHTML = `
-  <div class="hero-text">
-    <h1>Buka Potensi<br>Digital Anda</h1>
-    <p>Mulai Partnership & Bangun Karir Bersama Kami. Tingkatkan performa bisnis Anda melalui channel digital seperti Website, Google, Facebook, Instagram, YouTube, dll.</p>
- <a href="ourteam.html"><button class="cta-btn">Our Team</button></a>
-  </div>
-  <img src="img/trafik.png" class="hero-img" alt="Grafik Pertumbuhan">
-`;
+
+// === Hero Left (Text) ===
+const heroText = document.createElement("div");
+heroText.className = "hero-text";
+
+const heroTitle = document.createElement("h1");
+heroTitle.innerHTML = `Buka Potensi <br><span>Digital Anda</span>`;
+heroText.appendChild(heroTitle);
+
+const heroDesc = document.createElement("p");
+heroDesc.textContent =
+    "Mulai Partnership & Bangun Karir Bersama Kami. Tingkatkan performa bisnis Anda melalui channel digital seperti Website, Google, Facebook, Instagram, YouTube, dan lainnya.";
+heroText.appendChild(heroDesc);
+
+const heroBtn = document.createElement("a");
+heroBtn.href = "ourteam.html";
+heroBtn.className = "cta-btn";
+heroBtn.textContent = "Our Team";
+heroText.appendChild(heroBtn);
+
+// === Hero Social Media Icons ===
+const socialContainer = document.createElement("div");
+socialContainer.className = "social-icons";
+
+const socialLinks = [{
+        icon: "fab fa-instagram",
+        url: "#"
+    },
+    {
+        icon: "fab fa-facebook",
+        url: "#"
+    },
+    {
+        icon: "fab fa-github",
+        url: "#"
+    },
+    {
+        icon: "fab fa-linkedin",
+        url: "#"
+    },
+];
+
+socialLinks.forEach((item) => {
+    const a = document.createElement("a");
+    a.href = item.url;
+    a.innerHTML = `<i class="${item.icon}"></i>`;
+    socialContainer.appendChild(a);
+});
+
+heroText.appendChild(socialContainer);
+
+// === Hero Right (Image) ===
+const heroImage = document.createElement("img");
+heroImage.src = "img/trafik.png"; // Ganti dengan gambar yang sesuai
+heroImage.alt = "Grafik Pertumbuhan";
+heroImage.className = "hero-img";
+
+// === Gabungkan ke dalam Hero Section ===
+hero.appendChild(heroText);
+hero.appendChild(heroImage);
+
 document.body.appendChild(hero);
 
-// ===== ABOUT =====
-const about = document.createElement("section");
-about.className = "about";
-about.id = "about";
-about.innerHTML = `
-  <div class="about-left">
-    <img src="img/founder.png" alt="Founder">
-  </div>
-  <div class="about-right">
-    <h2>San Digital Agency</h2>
-    <p>Kami adalah perusahaan digital yang membantu meningkatkan performa bisnis Anda melalui branding, desain, dan teknologi terkini.</p>
-    <p>Web Agency merupakan jasa pembuatan Desain, website profesional untuk keperluan bisnis seperti company profile maupun portofolio pribadi kamu,
-
-Mulai dari SEO, Marketing, etc</p>
-    <button class="cta-btn">Layanan Kami</button>
-  </div>
-`;
-document.body.appendChild(about);
 
 // ===== SERVICES =====
 const services = document.createElement("section");

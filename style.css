@@ -228,32 +228,40 @@ body {
   }
 }
 
-/* =========================
-   HERO SECTION
-========================= */
+/* ========== HERO SECTION ========== */
 .hero {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 80px 8%;
+  align-items: center;
+  padding: 80px 10%;
+  position: relative;
   background: #fff;
-  color: #111;
-  min-height: 100vh;
-  flex-wrap: wrap;
-  gap: 40px;
+  overflow: hidden;
+}
+
+/* 🔵 Lingkaran biru di pinggir */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  right: -150px;
+  width: 400px;
+  height: 400px;
+  background: rgba(0, 123, 255, 0.05);
+  border-radius: 50%;
+  z-index: 0;
 }
 
 .hero-text {
-  flex: 1 1 480px;
-  max-width: 600px;
+  flex: 1;
+  z-index: 2;
 }
 
 .hero-text h1 {
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: 2.8rem;
+  color: #000;
   font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 20px;
-  color: #111;
+  line-height: 1.3;
 }
 
 .hero-text h1 span {
@@ -261,59 +269,58 @@ body {
 }
 
 .hero-text p {
-  font-size: clamp(0.95rem, 2vw, 1.1rem);
-  line-height: 1.6;
-  margin-bottom: 30px;
-  color: #333;
+  margin: 15px 0 25px;
+  font-size: 1rem;
+  color: #444;
+  max-width: 500px;
 }
 
 .cta-btn {
-  display: inline-block;
-  background-color: #38a4ff;
+  background: #007bff;
   color: #fff;
-  padding: 12px 30px;
+  border: none;
+  padding: 10px 20px;
   border-radius: 6px;
+  cursor: pointer;
   font-weight: 600;
   text-decoration: none;
-  transition: 0.3s ease;
-  box-shadow: 0 4px 10px rgba(56, 164, 255, 0.3);
+  transition: 0.3s;
 }
 
 .cta-btn:hover {
-  background-color: #007bff;
-  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+  background: #0056d2;
 }
 
-/* =========================
-   HERO IMAGE
-========================= */
-.hero-img {
-  flex: 1 1 400px;
-  max-width: 500px;
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-
-/* =========================
-   SOCIAL ICONS
-========================= */
+/* Ikon sosial media bulat */
 .social-icons {
+  display: flex;
+  gap: 15px;
   margin-top: 25px;
+}
+
+.social-link {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #007bff;
+  border-radius: 50%;
+  color: #007bff;
   display: flex;
   align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
+  justify-content: center;
+  transition: 0.3s;
+  font-size: 18px;
 }
 
-.social-icons a {
-  color: #111;
-  font-size: 1.5rem;
-  transition: 0.3s ease;
+.social-link:hover {
+  background: #007bff;
+  color: #fff;
 }
 
-.social-icons a:hover {
-  color: #007bff;
+.hero-img {
+  flex: 1;
+  width: 450px;
+  z-index: 2;
+  animation: float 3s ease-in-out infinite;
 }
 
 /* =========================

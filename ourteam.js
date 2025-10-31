@@ -92,7 +92,7 @@ leaderGrid.className = "leader-grid";
 const leaders = [{
         name: "Renata",
         role: "Founder",
-        img: "/img/renata.jpg",
+        img: "/img/Renata.png",
         color: "border-blue founder"
     },
     {
@@ -151,7 +151,7 @@ teamGrid.className = "team-grid";
 const teamMembers = [{
         name: "Renata",
         role: "Desain",
-        img: "/img/Renata2.jpg",
+        img: "/img/renata2.png",
         link: "https://www.figma.com/design/alJvfHARz1XBSuUo7KTzpF/San-Digital-Agency?t=IAApafBVeJqBrHzm-0"
     },
     {

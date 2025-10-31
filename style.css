@@ -896,3 +896,79 @@ footer {
     align-self: flex-start;
   }
 }
+
+/* =========================
+   WHATSAPP FLOATING BUTTON
+========================= */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 25px;
+  right: 25px;
+  background-color: #25d366; /* Warna hijau khas WhatsApp */
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 32px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-float i {
+  margin-top: 14px;
+}
+
+.whatsapp-float:hover {
+  background-color: #1ebe5c; /* Hijau lebih tua saat hover */
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+}
+
+/* Animasi muncul halus */
+.whatsapp-float {
+  opacity: 0;
+  animation: fadeInWA 0.8s ease forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeInWA {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   RESPONSIVE (TABLET & HP)
+========================= */
+@media (max-width: 768px) {
+  .whatsapp-float {
+    width: 50px;
+    height: 50px;
+    bottom: 30px;
+    right: 20px;
+    font-size: 26px;
+  }
+  .whatsapp-float i {
+    margin-top: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .whatsapp-float {
+    width: 45px;
+    height: 45px;
+    bottom: 40px;
+    right: 15px;
+    font-size: 24px;
+  }
+  .whatsapp-float i {
+    margin-top: 10px;
+  }
+}

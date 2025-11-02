@@ -37,12 +37,12 @@ const navItems = [{
         name: "About",
         dropdown: [{
                 name: "Sejarah",
-                link: "#sejarah"
-            },
+                link: "sejarah.html"
+            }, // halaman terpisah
             {
                 name: "Visi & Misi",
                 link: "#visi-misi"
-            }
+            } // smooth scroll
         ]
     },
     {
@@ -63,10 +63,10 @@ const navItems = [{
     }
 ];
 
-// Ambil tinggi navbar untuk offset
-const navbarHeight = 80; // sesuaikan dengan tinggi navbar di CSS
+// Tinggi navbar untuk offset
+const navbarHeight = 115;
 
-navItems.forEach((item) => {
+navItems.forEach(item => {
     const li = document.createElement("li");
 
     if (item.dropdown) {
@@ -78,13 +78,58 @@ navItems.forEach((item) => {
         const dropdownMenu = document.createElement("div");
         dropdownMenu.className = "dropdown-menu";
 
-        item.dropdown.forEach((sub) => {
+        item.dropdown.forEach(sub => {
             const a = document.createElement("a");
             a.href = sub.link;
             a.textContent = sub.name;
-            a.addEventListener("click", (e) => {
+
+            if (sub.link.startsWith("#")) {
+                // smooth scroll
+                a.addEventListener("click", e => {
+                    e.preventDefault();
+                    const target = document.querySelector(sub.link);
+                    if (target) {
+                        const y = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+                        window.scrollTo({
+                            top: y,
+                            behavior: "smooth"
+                        });
+                    }
+                    dropdownMenu.classList.remove("show");
+                    btn.querySelector(".arrow").classList.remove("rotate");
+                });
+            }
+            // Jika bukan anchor (#), biarkan link normal (halaman lain)
+            dropdownMenu.appendChild(a);
+        });
+
+        li.appendChild(dropdownMenu);
+
+        // Toggle dropdown on click
+        btn.addEventListener("click", e => {
+            e.stopPropagation();
+            dropdownMenu.classList.toggle("show");
+            btn.querySelector(".arrow").classList.toggle("rotate");
+        });
+
+        // Tutup dropdown jika klik di luar
+        document.addEventListener("click", e => {
+            if (!li.contains(e.target)) {
+                dropdownMenu.classList.remove("show");
+                btn.querySelector(".arrow").classList.remove("rotate");
+            }
+        });
+
+    } else {
+        const a = document.createElement("a");
+        a.href = item.link;
+        a.textContent = item.name;
+
+        if (item.link.startsWith("#")) {
+            // smooth scroll
+            a.addEventListener("click", e => {
                 e.preventDefault();
-                const target = document.querySelector(sub.link);
+                const target = document.querySelector(item.link);
                 if (target) {
                     const y = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
                     window.scrollTo({
@@ -93,42 +138,7 @@ navItems.forEach((item) => {
                     });
                 }
             });
-            dropdownMenu.appendChild(a);
-        });
-
-        li.appendChild(dropdownMenu);
-
-        // Toggle dropdown on click
-        btn.addEventListener("click", (e) => {
-            e.stopPropagation();
-            dropdownMenu.classList.toggle("show");
-            btn.querySelector(".arrow").classList.toggle("rotate");
-        });
-
-        // Tutup dropdown kalau klik di luar
-        document.addEventListener("click", (e) => {
-            if (!li.contains(e.target)) {
-                dropdownMenu.classList.remove("show");
-                btn.querySelector(".arrow").classList.remove("rotate");
-            }
-        });
-    } else {
-        const a = document.createElement("a");
-        a.href = item.link;
-        a.textContent = item.name;
-
-        // Smooth scroll dengan offset navbar
-        a.addEventListener("click", (e) => {
-            e.preventDefault();
-            const target = document.querySelector(item.link);
-            if (target) {
-                const y = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
-                window.scrollTo({
-                    top: y,
-                    behavior: "smooth"
-                });
-            }
-        });
+        }
 
         li.appendChild(a);
     }

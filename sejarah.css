@@ -12,7 +12,7 @@
 body {
   background: #fff;
   color: #222;
-  padding-top: 115px; /* ruang di bawah navbar */
+  padding-top: 10px; /* ruang di bawah navbar */
   line-height: 1.6;
   scroll-behavior: smooth; /* smooth scroll global */
 }

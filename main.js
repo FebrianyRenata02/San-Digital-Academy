@@ -1,75 +1,152 @@
 // =======================
-//  NAVBAR STRUCTURE
+// TOP BAR
 // =======================
 const topBar = document.createElement("div");
 topBar.className = "top-bar";
 topBar.textContent =
-    "kami adalah Perusahaan San Digital profesional, mari bekerja sama hubungi kami";
+    "Kami adalah Perusahaan San Digital profesional — Mari bekerja sama dan hubungi kami!";
 document.body.appendChild(topBar);
 
+// =======================
+// NAVBAR
+// =======================
 const navbar = document.createElement("nav");
 navbar.className = "navbar";
 
-// ====== Logo ======
-const logo = document.createElement("img");
-logo.src = "img/Agency Logo Transparant.png";
-logo.alt = "San Digital Logo";
+// ===== Logo =====
+const logo = document.createElement("div");
 logo.className = "logo";
+logo.innerHTML = `<img src="img/Agency Logo Transparant.png" alt="San Digital Logo">`;
+logo.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
 navbar.appendChild(logo);
 
-// ====== Nav List ======
-const navList = document.createElement("ul");
-navList.className = "nav-list";
+// ===== Nav Menu =====
+const navMenu = document.createElement("ul");
+navMenu.className = "nav-menu";
 
 const navItems = [{
         name: "Home",
-        id: "home"
+        link: "#home"
     },
     {
         name: "About",
-        id: "about"
+        dropdown: [{
+                name: "Sejarah",
+                link: "#sejarah"
+            },
+            {
+                name: "Visi & Misi",
+                link: "#visi-misi"
+            }
+        ]
     },
     {
         name: "Services",
-        id: "services"
+        link: "#services"
     },
     {
         name: "Portfolio",
-        id: "portfolio"
+        link: "#portfolio"
     },
     {
         name: "Blog",
-        id: "blog"
+        link: "#blog"
     },
     {
         name: "Contact",
-        id: "contact"
-    },
+        link: "#contact"
+    }
 ];
+
+// Ambil tinggi navbar untuk offset
+const navbarHeight = 80; // sesuaikan dengan tinggi navbar di CSS
 
 navItems.forEach((item) => {
     const li = document.createElement("li");
-    const a = document.createElement("a");
-    a.href = `#${item.id}`;
-    a.textContent = item.name;
-    li.appendChild(a);
-    navList.appendChild(li);
+
+    if (item.dropdown) {
+        const btn = document.createElement("button");
+        btn.className = "dropdown-btn";
+        btn.innerHTML = `${item.name} <span class="arrow">▼</span>`;
+        li.appendChild(btn);
+
+        const dropdownMenu = document.createElement("div");
+        dropdownMenu.className = "dropdown-menu";
+
+        item.dropdown.forEach((sub) => {
+            const a = document.createElement("a");
+            a.href = sub.link;
+            a.textContent = sub.name;
+            a.addEventListener("click", (e) => {
+                e.preventDefault();
+                const target = document.querySelector(sub.link);
+                if (target) {
+                    const y = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+                    window.scrollTo({
+                        top: y,
+                        behavior: "smooth"
+                    });
+                }
+            });
+            dropdownMenu.appendChild(a);
+        });
+
+        li.appendChild(dropdownMenu);
+
+        // Toggle dropdown on click
+        btn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            dropdownMenu.classList.toggle("show");
+            btn.querySelector(".arrow").classList.toggle("rotate");
+        });
+
+        // Tutup dropdown kalau klik di luar
+        document.addEventListener("click", (e) => {
+            if (!li.contains(e.target)) {
+                dropdownMenu.classList.remove("show");
+                btn.querySelector(".arrow").classList.remove("rotate");
+            }
+        });
+    } else {
+        const a = document.createElement("a");
+        a.href = item.link;
+        a.textContent = item.name;
+
+        // Smooth scroll dengan offset navbar
+        a.addEventListener("click", (e) => {
+            e.preventDefault();
+            const target = document.querySelector(item.link);
+            if (target) {
+                const y = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+                window.scrollTo({
+                    top: y,
+                    behavior: "smooth"
+                });
+            }
+        });
+
+        li.appendChild(a);
+    }
+
+    navMenu.appendChild(li);
 });
-navbar.appendChild(navList);
 
-// ====== Discord Button ======
-const discordWrapper = document.createElement("div");
-discordWrapper.className = "discord-btn-wrapper";
+navbar.appendChild(navMenu);
 
-const discordBtn = document.createElement("a");
-discordBtn.href = "https://discord.gg/VHscdktb24";
-discordBtn.target = "_blank";
-discordBtn.className = "discord-btn";
-discordBtn.innerHTML = `<i class="fa-brands fa-discord"></i> Join Discord`;
-discordWrapper.appendChild(discordBtn);
-navbar.appendChild(discordWrapper);
+// ===== Join Discord Button dengan Icon =====
+const joinBtn = document.createElement("a");
+joinBtn.href = "https://discord.gg/VHscdktb24";
+joinBtn.target = "_blank";
+joinBtn.className = "join-btn";
+joinBtn.innerHTML = `<i class="fa-brands fa-discord"></i> Join Discord`;
+navbar.appendChild(joinBtn);
 
-// ====== Hamburger (Mobile) ======
+// ===== Hamburger =====
 const hamburger = document.createElement("div");
 hamburger.className = "hamburger";
 hamburger.innerHTML = `<span></span><span></span><span></span>`;
@@ -77,12 +154,10 @@ navbar.appendChild(hamburger);
 
 document.body.appendChild(navbar);
 
-// =======================
-//  NAVBAR FUNCTIONALITY
-// =======================
+// Toggle Menu Mobile
 hamburger.addEventListener("click", () => {
     hamburger.classList.toggle("active");
-    navList.classList.toggle("active");
+    navMenu.classList.toggle("active");
 });
 
 // =======================
@@ -210,7 +285,7 @@ const portfolioData = [{
     {
         img: "/img/online-resume-animate.svg",
         link: "https://febrianyrenata.vercel.app/",
-        title: "Portfolio Rena Update",
+        title: "Portfolio Rena Versi Update",
     },
     {
         img: "https://specialteam.vercel.app/assets/img/main_icon2.svg",

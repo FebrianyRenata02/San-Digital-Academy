@@ -4,7 +4,7 @@
 const topBar = document.createElement("div");
 topBar.className = "top-bar";
 topBar.textContent =
-    "Kami adalah Perusahaan San Digital profesional — Mari bekerja sama dan hubungi kami!";
+    "kami adalah Perusahaan San Digital profesional, mari bekerja sama hubungi kami";
 document.body.appendChild(topBar);
 
 // =======================

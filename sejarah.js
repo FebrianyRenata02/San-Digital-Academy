@@ -39,7 +39,7 @@ const navItems = [{
             },
             {
                 name: "Visi & Misi",
-                link: "#visi-misi"
+                link: "VisiMisi.html"
             }
         ]
     },

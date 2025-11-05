@@ -41,7 +41,7 @@ const navItems = [{
             }, // halaman terpisah
             {
                 name: "Visi & Misi",
-                link: "#visi-misi"
+                link: "VisiMisi.html"
             } // smooth scroll
         ]
     },

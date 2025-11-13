@@ -313,9 +313,9 @@ const portfolioData = [{
         title: "Sunset Tech Bootcamp 👨‍💻",
     },
     {
-        img: "https://specialteam.vercel.app/assets/img/main_icon2.svg",
+        img: "/img/galery.png",
         link: "#",
-        title: "Mobile Development",
+        title: "Lorem",
     },
 ];
 

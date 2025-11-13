@@ -302,22 +302,44 @@ const portfolioData = [{
         link: "https://specialteam.vercel.app/",
         title: "Special Team",
     },
+    {
+        img: "img/Sunset Brew.png",
+        link: "https://sunset-brew-coffeee.vercel.app/",
+        title: "Sunset Brew Coffee",
+    },
+    {
+        img: "/img/online-resume-animate.svg",
+        link: "#",
+        title: "UI/UX Project",
+    },
+    {
+        img: "https://specialteam.vercel.app/assets/img/main_icon2.svg",
+        link: "#",
+        title: "Mobile Development",
+    },
 ];
 
 const portfolio = document.createElement("section");
 portfolio.className = "portfolio";
 portfolio.id = "portfolio";
 
+// Judul
 const portfolioTitle = document.createElement("h2");
-portfolioTitle.textContent = "Portfolio";
+portfolioTitle.textContent = "Portofolio";
+portfolioTitle.style.textAlign = "center";
+portfolioTitle.style.fontWeight = "700";
+portfolioTitle.style.margin = "50px 0 40px";
+portfolioTitle.style.fontSize = "28px";
 portfolio.appendChild(portfolioTitle);
 
+// Grid container
 const portfolioGrid = document.createElement("div");
-portfolioGrid.className = "grid";
+portfolioGrid.className = "portfolio-grid";
 
+// Generate item
 portfolioData.forEach((item) => {
     const box = document.createElement("div");
-    box.className = "box";
+    box.className = "portfolio-item";
 
     const a = document.createElement("a");
     a.href = item.link;
@@ -327,18 +349,9 @@ portfolioData.forEach((item) => {
     const img = document.createElement("img");
     img.src = item.img;
     img.alt = item.title;
-    img.style.width = "200px";
-    img.style.height = "200px";
-    img.style.objectFit = "contain";
-    img.style.display = "block";
-    img.style.margin = "0 auto";
 
     const title = document.createElement("p");
     title.textContent = item.title;
-    title.style.textAlign = "center";
-    title.style.fontWeight = "600";
-    title.style.marginTop = "8px";
-    title.style.color = "#333";
 
     a.appendChild(img);
     a.appendChild(title);
@@ -346,6 +359,7 @@ portfolioData.forEach((item) => {
     portfolioGrid.appendChild(box);
 });
 
+// Tambahkan ke section
 portfolio.appendChild(portfolioGrid);
 document.body.appendChild(portfolio);
 

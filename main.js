@@ -305,12 +305,12 @@ const portfolioData = [{
     {
         img: "img/Sunset Brew.png",
         link: "https://sunset-brew-coffeee.vercel.app/",
-        title: "Sunset Brew Coffee",
+        title: "Sunset Brew Coffee ☕",
     },
     {
-        img: "/img/online-resume-animate.svg",
+      img: "/img/Sunset_Tech_Bootcamp.png",
         link: "#",
-        title: "UI/UX Project",
+        title: "Sunset Tech Bootcamp 👨‍💻",
     },
     {
         img: "https://specialteam.vercel.app/assets/img/main_icon2.svg",

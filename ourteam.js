@@ -92,7 +92,7 @@ leaderGrid.className = "leader-grid";
 const leaders = [{
         name: "Renata",
         role: "Founder",
-        img: "/img/Renata.png",
+        img: "/img/Founder.png",
         color: "border-blue founder"
     },
     {

@@ -290,12 +290,12 @@ document.body.appendChild(services);
 const portfolioData = [{
         img: "img/programmer.svg",
         link: "https://febrianyrenata02.github.io/web-portofolio-saya/portofolio",
-        title: "Portfolio Rena",
+        title: "Portofolio Rena",
     },
     {
         img: "/img/online-resume-animate.svg",
         link: "https://febrianyrenata.vercel.app/",
-        title: "Portfolio Rena Update",
+        title: "Portofolio Rena Update",
     },
     {
         img: "https://specialteam.vercel.app/assets/img/main_icon2.svg",

@@ -254,7 +254,7 @@ item6.className = "timeline-item right";
 item6.innerHTML = `
   <h4>30 Januari 2026</h4>
 
-  <img src="/img/Sunset Tech.png" alt="Sunset Tech" class="timeline-img small">
+  <img src="https://raw.githubusercontent.com/FebrianyRenata02/San-Digital-Academy/refs/heads/main/img/sunset%20tech.png" alt="Sunset Tech" class="timeline-img small">
 
   <p>
     Tanggal <strong>30 Januari</strong> sampai <strong>1 Februari</strong> 
@@ -264,7 +264,7 @@ item6.innerHTML = `
     <strong>Sunrise</strong> yang berarti <em>Terbenam menjadi Terbit</em>.
   </p>
 
-  <img src="/img/Sunrise Tech.png" alt="Sunrise Tech" class="timeline-img small">
+  <img src="https://raw.githubusercontent.com/FebrianyRenata02/San-Digital-Academy/refs/heads/main/img/sunrise%20tech.png" alt="Sunrise Tech" class="timeline-img small">
 
   <p>
     Yang artinya membangun awal baru di bidang teknologi & edukasi digital.

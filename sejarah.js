@@ -240,7 +240,7 @@ item5.innerHTML = `
     <strong>Sunset</strong> menjadi <strong>Sunrise</strong>
   </p>
 
-  <img src="/img/Sunrise Brew.png" alt="Sunrise Brew" class="timeline-img">
+  <img src="https://raw.githubusercontent.com/FebrianyRenata02/San-Digital-Academy/refs/heads/main/img/sunrise%20brew.png" alt="Sunrise Brew" class="timeline-img">
 
   <p>
     Di awal Januari kami sedang fokus membuat event awal tahun.<br>

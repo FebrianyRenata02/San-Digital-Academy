@@ -266,7 +266,7 @@ item6.innerHTML = `
   <img src="https://raw.githubusercontent.com/FebrianyRenata02/San-Digital-Academy/refs/heads/main/img/sunrise%20tech.png" alt="Sunrise Tech" class="timeline-img small">
 
   <p>
-    Yang artinya membangun awal baru di bidang teknologi & edukasi digital.
+    Yang artinya membangun.
   </p>
 `;
 

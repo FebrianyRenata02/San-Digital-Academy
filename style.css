@@ -573,6 +573,47 @@ section {
   transform: scale(1.05);
 }
 
+.mitra {
+  text-align: center;
+  margin: 60px 0;
+}
+
+.mitra h2 {
+  margin-bottom: 30px;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.mitra-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.mitra-box {
+  padding: 20px;
+  background: #f3f3f3;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 120px;
+  transition: 0.3s ease;
+}
+
+.mitra-box img {
+  max-width: 120px;
+  max-height: 70px;
+  object-fit: contain;
+}
+
+.mitra-box:hover {
+  transform: translateY(-5px);
+  background: #eaeaea;
+}
+
 
 /* =========================
    CONTACT SECTION

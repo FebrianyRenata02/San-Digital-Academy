@@ -254,12 +254,11 @@ item6.className = "timeline-item right";
 item6.innerHTML = `
   <h4>30 Januari 2026</h4>
 
+  Tanggal <strong>30 Januari</strong> sampai <strong>1 Februari</strong> 
+    kami mulai merintis kelas & bootcamp.<br><br>
   <img src="https://raw.githubusercontent.com/FebrianyRenata02/San-Digital-Academy/refs/heads/main/img/sunset%20tech.png" alt="Sunset Tech" class="timeline-img small">
 
   <p>
-    Tanggal <strong>30 Januari</strong> sampai <strong>1 Februari</strong> 
-    kami mulai merintis kelas & bootcamp.<br><br>
-
     Mengubah nama <strong>Sunset</strong> menjadi 
     <strong>Sunrise</strong> yang berarti <em>Terbenam menjadi Terbit</em>.
   </p>

@@ -230,7 +230,48 @@ item4.innerHTML = `
   <p>Di bulan September sampai Oktober membangun desain hingga pembentukan Website Coffee Shop & Agency</p>
 `;
 
-timeline.append(item1, item2, item3, item4);
+// 5️⃣ Item 5 - 01 Januari 2026
+const item5 = document.createElement("div");
+item5.className = "timeline-item left";
+item5.innerHTML = `
+  <h4>01 Januari 2026</h4>
+  <p>
+    Update merubah nama komunitas dari 
+    <strong>Sunset</strong> menjadi <strong>Sunrise</strong>
+  </p>
+
+  <img src="/img/Sunrise Brew.png" alt="Sunrise Brew" class="timeline-img">
+
+  <p>
+    Di awal Januari kami sedang fokus membuat event awal tahun.<br>
+    Event berlangsung selama <strong>3 bulan</strong> sampai bulan <strong>Maret</strong>.
+  </p>
+`;
+
+// 6️⃣ Item 6 - 30 Januari 2026
+const item6 = document.createElement("div");
+item6.className = "timeline-item right";
+item6.innerHTML = `
+  <h4>30 Januari 2026</h4>
+
+  <img src="/img/Sunset Tech.png" alt="Sunset Tech" class="timeline-img small">
+
+  <p>
+    Tanggal <strong>30 Januari</strong> sampai <strong>1 Februari</strong> 
+    kami mulai merintis kelas & bootcamp.<br><br>
+
+    Mengubah nama <strong>Sunset</strong> menjadi 
+    <strong>Sunrise</strong> yang berarti <em>Terbenam menjadi Terbit</em>.
+  </p>
+
+  <img src="/img/Sunrise Tech.png" alt="Sunrise Tech" class="timeline-img small">
+
+  <p>
+    Yang artinya membangun awal baru di bidang teknologi & edukasi digital.
+  </p>
+`;
+
+timeline.append(item1, item2, item3, item4, item5, item6);
 section.appendChild(timeline);
 document.body.appendChild(section);
 

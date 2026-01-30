@@ -438,7 +438,7 @@ mitraSection.className = "mitra";
 mitraSection.id = "mitra";
 
 const mitraTitle = document.createElement("h2");
-mitraTitle.textContent = "Mitra";
+mitraTitle.textContent = "Mitra 🤝";
 mitraSection.appendChild(mitraTitle);
 
 const mitraGrid = document.createElement("div");

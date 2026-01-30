@@ -604,4 +604,16 @@ footer {
   .footer-column li {
     font-size: 14px;
   }
+   .timeline-img {
+  width: 220px;
+  max-width: 100%;
+  margin: 15px 0;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.timeline-img.small {
+  width: 160px;
+  margin: 10px 0;
+}
 }

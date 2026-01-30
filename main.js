@@ -415,6 +415,49 @@ blogData.forEach((item) => {
 blog.appendChild(blogGrid);
 document.body.appendChild(blog);
 
+// ===== MITRA / PARTNERSHIP =====
+const mitraData = [{
+        img: "/img/Spesial_team.png",
+        link: "https://specialteam.vercel.app/",
+        title: "Special Team"
+    },
+    {
+        img: "img/fedora.png",
+        link: "https://fedoraweb.site/",
+        name: "Fedora Aliansi Digital"
+    },
+    {
+        img: "img/skynet.png",
+        link: "https://www.webskynet.my.id",
+        name: "Skynet"
+    },
+];
+
+const mitraSection = document.createElement("section");
+mitraSection.className = "mitra";
+mitraSection.id = "mitra";
+
+const mitraTitle = document.createElement("h2");
+mitraTitle.textContent = "Mitra";
+mitraSection.appendChild(mitraTitle);
+
+const mitraGrid = document.createElement("div");
+mitraGrid.className = "mitra-grid";
+
+mitraData.forEach((item) => {
+    const box = document.createElement("div");
+    box.className = "mitra-box";
+
+    const img = document.createElement("img");
+    img.src = item.img;
+    img.alt = item.name;
+
+    box.appendChild(img);
+    mitraGrid.appendChild(box);
+});
+
+mitraSection.appendChild(mitraGrid);
+document.body.appendChild(mitraSection);
 
 // ===== CONTACT =====
 const contact = document.createElement("section");

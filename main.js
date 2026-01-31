@@ -417,19 +417,19 @@ document.body.appendChild(blog);
 
 // ===== MITRA / PARTNERSHIP =====
 const mitraData = [{
-        img: "/img/Spesial_team.png",
-        link: "https://specialteam.vercel.app/",
-        title: "Special Team"
+        img: "https://ftmineral.upnyk.ac.id/public/assets/post/pict-2021021155.png",
+        link: "https://kemdiktisaintek.go.id/",
+        title: "Kampus Merdeka",
     },
     {
         img: "img/fedora.png",
         link: "https://fedoraweb.site/",
-        name: "Fedora Aliansi Digital"
+        title: "Fedora Aliansi Digital",
     },
     {
         img: "img/skynet.png",
         link: "https://www.webskynet.my.id",
-        name: "Skynet"
+        title: "Skynet",
     },
 ];
 

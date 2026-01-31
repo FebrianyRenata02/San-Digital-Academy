@@ -436,10 +436,7 @@ const mitraData = [{
 const mitraSection = document.createElement("section");
 mitraSection.className = "mitra";
 mitraSection.id = "mitra";
-
-const mitraTitle = document.createElement("h2");
-mitraTitle.textContent = "Mitra";
-mitraSection.appendChild(mitraTitle);
+mitraSection.innerHTML = `<h2>Mitra</h2>`;
 
 const mitraGrid = document.createElement("div");
 mitraGrid.className = "mitra-grid";
@@ -448,11 +445,17 @@ mitraData.forEach((item) => {
     const box = document.createElement("div");
     box.className = "mitra-box";
 
+    const a = document.createElement("a");
+    a.href = item.link;
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+
     const img = document.createElement("img");
     img.src = item.img;
-    img.alt = item.name;
+    img.alt = item.title;
 
-    box.appendChild(img);
+    a.appendChild(img);
+    box.appendChild(a);
     mitraGrid.appendChild(box);
 });
 

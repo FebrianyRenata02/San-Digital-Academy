@@ -151,7 +151,7 @@ teamGrid.className = "team-grid";
 const teamMembers = [{
         name: "Renata",
         role: "Desain",
-        img: "/img/renata2.png",
+        img: "/img/Renata~Google.png",
         link: "https://www.figma.com/design/alJvfHARz1XBSuUo7KTzpF/San-Digital-Agency?t=IAApafBVeJqBrHzm-0"
     },
     {

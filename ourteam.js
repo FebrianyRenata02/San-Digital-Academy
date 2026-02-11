@@ -116,13 +116,29 @@ const leaders = [{
 ];
 
 leaders.forEach(leader => {
-    const card = document.createElement("div");
+
+    
+    const card = leader.link ?
+        document.createElement("a") :
+        document.createElement("div");
+
     card.className = `leader-card ${leader.color}`;
+
+    if (leader.link) {
+        card.href = leader.link;
+        card.target = "_blank";
+        card.rel = "noopener noreferrer";
+        card.style.textDecoration = "none";
+        card.style.cursor = "pointer";
+    }
+
     const img = document.createElement("img");
     img.src = leader.img;
     img.alt = leader.name;
+
     const name = document.createElement("h3");
     name.textContent = leader.name;
+
     const role = document.createElement("p");
     role.className = "role " + leader.role.toLowerCase();
     role.textContent = leader.role;
@@ -130,6 +146,7 @@ leaders.forEach(leader => {
     card.appendChild(img);
     card.appendChild(name);
     card.appendChild(role);
+
     leaderGrid.appendChild(card);
 });
 

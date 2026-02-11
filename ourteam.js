@@ -93,7 +93,8 @@ const leaders = [{
         name: "Renata",
         role: "Founder",
         img: "/img/Founder.png",
-        color: "border-blue founder"
+        color: "border-blue founder",
+        link: "https://febrianyrenata.vercel.app/" // ✅ Portofolio
     },
     {
         name: "Lorem",

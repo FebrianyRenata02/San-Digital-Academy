@@ -105,7 +105,7 @@ const leaders = [{
     {
         name: "Miftahul Dony Sanjaya",
         role: "Admin",
-        img: "https://services.presensi.co.id/media/admin/blog/a-728127.png",
+        img: "https://raw.githubusercontent.com/FebrianyRenata02/San-Digital-Academy/refs/heads/main/img/Miftahul%20Dony%20Sanjaya1.png",
         color: "border-pink admin"
     },
     {

@@ -103,7 +103,7 @@ const leaders = [{
         color: "border-orange chief"
     },
     {
-        name: "Lorem",
+        name: "Miftahul Dony Sanjaya",
         role: "Admin",
         img: "https://services.presensi.co.id/media/admin/blog/a-728127.png",
         color: "border-pink admin"

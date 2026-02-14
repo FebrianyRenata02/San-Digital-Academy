@@ -90,7 +90,7 @@ const leaderGrid = document.createElement("div");
 leaderGrid.className = "leader-grid";
 
 const leaders = [{
-        name: "Renata",
+        name: "Febriany Renata",
         role: "Founder",
         img: "/img/Founder.png",
         color: "border-blue founder",

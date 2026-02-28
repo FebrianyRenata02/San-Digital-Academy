@@ -33,7 +33,7 @@ body {
   display: flex;
   justify-content: space-between; /* logo kiri, nav kanan */
   align-items: center;
-  padding: 15px 80px;
+  padding: 14px 11%;
   position: fixed;
   top: 30px; /* di bawah topbar */
   left: 0;

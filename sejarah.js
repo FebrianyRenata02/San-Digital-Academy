@@ -234,7 +234,7 @@ item4.innerHTML = `
 const item5 = document.createElement("div");
 item5.className = "timeline-item left";
 item5.innerHTML = `
-  <h4>Di Bulan Mei 2026</h4>
+  <h4>Bulan Mei 2026</h4>
   <p>
     Komunitas Kami Update dari nama
     <strong>Sunset</strong> menjadi <strong>Sunrise</strong>

@@ -243,9 +243,9 @@ item5.innerHTML = `
   <img src="https://raw.githubusercontent.com/FebrianyRenata02/San-Digital-Academy/refs/heads/main/img/sunrise%20brew.png" alt="Sunrise Brew" class="timeline-img">
 
   <p>
-    Smbil Proses merubah nama berlangsung dan merintis, <br>
-    Awal Januari Kami fokus membuat event awal tahun.<br>
-    Event berlangsung selama <strong>3 bulan</strong> sampai bulan <strong>Maret</strong>.
+    Sambil Proses perubahan di bulan<br>
+    <strong>Januari Kami membuat event</strong> <br>
+    selama event berlangsung hingga <strong>Maret</strong>.
   </p>
 `;
 

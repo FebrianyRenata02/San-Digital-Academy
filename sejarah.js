@@ -255,8 +255,8 @@ item6.className = "timeline-item right";
 item6.innerHTML = `
   <h4>Mei - Agustus 2026</h4>
 
-  Tanggal <strong>Bulan Mei</strong> sampai <strong>Agustus</strong> 
-    Kami mendirikan sebuah kelas & bootcamp.<br><br>
+  <strong>Bulan Mei</strong> sampai <strong>Agustus</strong> 
+    Kami mendirikan sebuah kelas & bootcamp.<br>
   <img src="https://raw.githubusercontent.com/FebrianyRenata02/San-Digital-Academy/refs/heads/main/img/sunset%20tech.png" alt="Sunset Tech" class="timeline-img small">
 
   <p>

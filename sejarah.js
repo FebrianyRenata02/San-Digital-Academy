@@ -230,7 +230,7 @@ item4.innerHTML = `
   <p>Di bulan September sampai Oktober membangun desain hingga pembentukan Website Coffee Shop & Agency</p>
 `;
 
-// 5️⃣ Item 5 - 01 Januari 2026
+// 5️⃣ Item 5 Mei 2026
 const item5 = document.createElement("div");
 item5.className = "timeline-item left";
 item5.innerHTML = `
@@ -243,19 +243,20 @@ item5.innerHTML = `
   <img src="https://raw.githubusercontent.com/FebrianyRenata02/San-Digital-Academy/refs/heads/main/img/sunrise%20brew.png" alt="Sunrise Brew" class="timeline-img">
 
   <p>
-    Di awal Januari kami sedang fokus membuat event awal tahun.<br>
+    Smbil Proses merubah nama berlangsung dan merintis, <br>
+    Awal Januari Kami fokus membuat event awal tahun.<br>
     Event berlangsung selama <strong>3 bulan</strong> sampai bulan <strong>Maret</strong>.
   </p>
 `;
 
-// 6️⃣ Item 6 - 30 Januari 2026
+// 6️⃣ Item Mei 2026
 const item6 = document.createElement("div");
 item6.className = "timeline-item right";
 item6.innerHTML = `
-  <h4>30 Januari 2026</h4>
+  <h4>Mei sampai Agustus 2026</h4>
 
-  Tanggal <strong>30 Januari</strong> sampai <strong>1 Februari</strong> 
-    kami mulai merintis kelas & bootcamp.<br><br>
+  Tanggal <strong>Bulan Mei</strong> sampai <strong>Agustus</strong> 
+    Kami mendirikan sebuah kelas & bootcamp.<br><br>
   <img src="https://raw.githubusercontent.com/FebrianyRenata02/San-Digital-Academy/refs/heads/main/img/sunset%20tech.png" alt="Sunset Tech" class="timeline-img small">
 
   <p>

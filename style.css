@@ -457,6 +457,7 @@ section {
 }
 
 .service-cards {
+  padding-top: 4rem;
   display: flex;
   justify-content: center;
   gap: 178px;

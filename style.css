@@ -557,7 +557,7 @@ section {
 .grid {
   display: flex;
   justify-content: center;
-  gap: 250px;
+  gap: 248px;
   flex-wrap: wrap;
   margin-top: 30px;
 }

@@ -459,7 +459,7 @@ section {
 .service-cards {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 178px;
   flex-wrap: wrap;
 }
 

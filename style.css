@@ -494,7 +494,7 @@ section {
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 105px;
+  gap: 110px;
   justify-items: center;
   max-width: 1200px;
   margin: 0 auto;

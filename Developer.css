@@ -96,11 +96,13 @@ body {
 }
 
 .header-content {
-  padding: clamp(160px, 20vw, 260px) 20px;
+  padding: clamp(120px, 30vw, 260px) 20px;
+  padding: 350px;
   background-image: url("/img/Dev-banner.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  color: #000;
 }
 
 .header-content h1 {

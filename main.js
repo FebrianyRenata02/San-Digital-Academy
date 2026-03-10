@@ -313,9 +313,9 @@ const portfolioData = [{
         title: "Sunset Tech Bootcamp 👨‍💻",
     },
     {
-        img: "/img/galery.png",
-        link: "#",
-        title: "Lorem",
+        img: "https://raw.githubusercontent.com/FebrianyRenata02/San-Digital-Academy/refs/heads/main/img/Kota%20Mati.png",
+        link: "https://kota-mati.vercel.app/",
+        title: "Kota Mati",
     },
 ];
 

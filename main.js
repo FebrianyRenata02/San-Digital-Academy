@@ -623,6 +623,6 @@ document.getElementById("contactForm").addEventListener("submit", async(e) => {
         }
     } catch (err) {
         document.getElementById("response").textContent =
-            "⚠️ Terjadi kesalahan koneksi ke server.";
+            "⚠️ Terjadi kesalahan, Silahkan hubungi Whatsapp Kami";
     }
 });

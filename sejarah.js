@@ -241,12 +241,6 @@ item5.innerHTML = `
   </p>
 
   <img src="https://raw.githubusercontent.com/FebrianyRenata02/San-Digital-Academy/refs/heads/main/img/sunrise%20brew.png" alt="Sunrise Brew" class="timeline-img">
-
-  <p>
-    Sambil Proses perubahan di bulan<br>
-    <strong>Januari Kami membuat event</strong> <br>
-    selama event berlangsung hingga <strong>Maret</strong>.
-  </p>
 `;
 
 // 6️⃣ Item Mei 2026

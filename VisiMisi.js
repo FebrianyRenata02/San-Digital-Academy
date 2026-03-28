@@ -195,7 +195,7 @@ visiMisiSection.innerHTML = `
   <div class="content">
     <h3>Visi:</h3>
     <p>
-      Menjadi agensi digital terpercaya yang berperan aktif dalam pengembangan dunia pendidikan
+      Menjadi comunity digital terpercaya yang berkontribisi dan berperan aktif dalam pengembangan serta berkomitmen dalam dunia pendidikan
       melalui inovasi teknologi, kreativitas, dan solusi digital yang berdampak positif bagi masyarakat.
     </p>
 

@@ -417,7 +417,7 @@ document.body.appendChild(blog);
 
 // ===== MITRA / PARTNERSHIP =====
 const mitraData = [{
-        img: "https://ftmineral.upnyk.ac.id/public/assets/post/pict-2021021155.png",
+        img: "https://skolla.online/wp-content/uploads/2023/11/logo-kampus-merdeka-1024x393.png",
         link: "https://kemdiktisaintek.go.id/",
         title: "Kampus Merdeka",
     },

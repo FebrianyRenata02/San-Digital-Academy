@@ -202,7 +202,7 @@ socialContainer.className = "social-icons";
 
 const socialLinks = [{
         icon: "fab fa-instagram",
-        url: "https://www.instagram.com/sunsetbrew56/"
+        url: "https://www.instagram.com/san_global_digital/"
     },
     {
         icon: "fab fa-github",

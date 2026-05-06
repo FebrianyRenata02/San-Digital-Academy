@@ -449,12 +449,6 @@ const mitraData = [{
         link: "index.html",
         title: "Udemy",
     },
-    {
-        img: "https://media.istockphoto.com/id/1219544629/vector/picture-gallery-icon-logo-vector-illustrattion-photo-gallery-icon-design-vector-template.jpg?s=612x612&w=0&k=20&c=Wgtbx8GgQVe4LJ9eS3E9YNJpcj7VZG97DYF5WHYXh1s=",
-        // link: "https://www.webskynet.my.id",
-        link: "index.html",
-        title: "Lorem",
-    },
 ];
 
 const mitraSection = document.createElement("section");

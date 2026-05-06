@@ -434,6 +434,27 @@ const mitraData = [{
         link: "index.html",
         title: "Skynet",
     },
+    {
+        img: "https://files.startupranking.com/startup/thumb/24471_74eecacf22614aefb17dfd382b55f7744cdb3e2e_codepolitan_m.png",
+        link: "index.html",
+        title: "Codepolitan",
+    },
+    {
+        img: "https://www.static-src.com/wcsstore/Indraprastha/images/catalog/mlogo/PRE-70111-06e9aaf7-eb16-45d3-998b-d0fa5f50d608.jpg",
+        link: "index.html",
+        title: "Progate",
+    },
+    {
+        img: "https://brandlogos.net/wp-content/uploads/2022/05/udemy-logo_brandlogos.net_xwww7-512x512.png",
+        link: "index.html",
+        title: "Udemy",
+    },
+    {
+        img: "https://media.istockphoto.com/id/1219544629/vector/picture-gallery-icon-logo-vector-illustrattion-photo-gallery-icon-design-vector-template.jpg?s=612x612&w=0&k=20&c=Wgtbx8GgQVe4LJ9eS3E9YNJpcj7VZG97DYF5WHYXh1s=",
+        // link: "https://www.webskynet.my.id",
+        link: "index.html",
+        title: "Lorem",
+    },
 ];
 
 const mitraSection = document.createElement("section");

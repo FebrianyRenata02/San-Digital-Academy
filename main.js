@@ -418,17 +418,20 @@ document.body.appendChild(blog);
 // ===== MITRA / PARTNERSHIP =====
 const mitraData = [{
         img: "https://skolla.online/wp-content/uploads/2023/11/logo-kampus-merdeka-1024x393.png",
-        link: "https://kemdiktisaintek.go.id/",
+        // link: "https://kemdiktisaintek.go.id/",
+        link: "index.html",
         title: "Kampus Merdeka",
     },
     {
         img: "img/fedora.png",
-        link: "https://fedoraweb.site/",
+        // link: "https://fedoraweb.site/",
+        link: "index.html",
         title: "Fedora Aliansi Digital",
     },
     {
         img: "img/skynet.png",
-        link: "https://www.webskynet.my.id",
+        // link: "https://www.webskynet.my.id",
+        link: "index.html",
         title: "Skynet",
     },
 ];

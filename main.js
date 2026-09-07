@@ -461,11 +461,17 @@ const mitraData = [{
         // link: "index.html",
         title: "Udemy",
     },
-        {
+    {
         img: "https://play-lh.googleusercontent.com/WxZ_Nxzwc3gU4jZqB43NEEDRjqXcfapCZcpdty1kmNc989JPE7lmgJFmnoQDpFo1VqchEH728FSLfjVk6oeZOw",
          link:  "https://bpkpenabur.or.id/",
         // link: "index.html",
         title: "Yayasan Pendidikan Kristen Penabur",
+    },
+      {
+        img: "https://www.unpas.ac.id/",
+         link:  "https://raw.githubusercontent.com/FebrianyRenata02/San-Global-Digital/refs/heads/main/img/Logo_UNPAS.png",
+        // link: "index.html",
+        title: "Universitas Pasundan",
     },
 ];
 

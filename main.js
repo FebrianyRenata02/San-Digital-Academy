@@ -468,7 +468,7 @@ const mitraData = [{
         title: "Yayasan Pendidikan Kristen Penabur",
     },
       {
-        img: "https://www.unpas.ac.id/",
+        img: "https://raw.githubusercontent.com/FebrianyRenata02/San-Global-Digital/refs/heads/main/img/Logo_UNPAS.png",
          link:  "https://raw.githubusercontent.com/FebrianyRenata02/San-Global-Digital/refs/heads/main/img/Logo_UNPAS.png",
         // link: "index.html",
         title: "Universitas Pasundan",
